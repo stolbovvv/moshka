@@ -44,7 +44,7 @@
 	cursor: pointer;
 }
 
-.slider__button > svg {
+.slider__button > img {
 	width: 50%;
 	height: 50%;
 }

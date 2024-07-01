@@ -19,7 +19,7 @@ async function getResources(): Promise<ResourceData[]> {
 }
 
 async function getReviews(): Promise<ReviewsData[]> {
-	const response = await fetch('http:/localhost:3030/resources', {
+	const response = await fetch('http:/localhost:3030/reviews', {
 		cache: 'no-cache',
 	});
 
