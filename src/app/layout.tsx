@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import '@/styles/global.css';
 import '@/styles/layout.css';
 import '@/styles/helper.css';
+import { sffont, unbounded } from '@/fonts';
 
 export const metadata: Metadata = {
 	title: 'Moshka',
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
 	return (
-		<html lang="ru">
-			<body>{children}</body>
+		<html lang="ru" className={unbounded.variable}>
+			<body className={sffont.className}>{children}</body>
 		</html>
 	);
 }
