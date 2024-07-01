@@ -6,15 +6,21 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
+		"server": "npx json-server data/db.json --port 3030",
 		"lint": "next lint",
 		"prepare": "husky"
 	},
 	"dependencies": {
+		"clsx": "^2.1.1",
+		"json-server": "^1.0.0-beta.1",
 		"next": "14.2.4",
 		"react": "^18",
-		"react-dom": "^18"
+		"react-dom": "^18",
+		"sanitize.css": "^13.0.0",
+		"swiper": "^11.1.4"
 	},
 	"devDependencies": {
+		"@svgr/webpack": "^8.1.0",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",

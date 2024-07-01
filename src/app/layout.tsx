@@ -1,9 +1,12 @@
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import '@/styles/global.css';
-import '@/styles/layout.css';
-import '@/styles/helper.css';
-import { sffont, unbounded } from '@/fonts';
+import 'sanitize.css';
+import '@/assets/styles/global.css';
+import '@/assets/styles/layout.css';
+import '@/assets/styles/helper.css';
+import { sffont, unbounded } from '@/assets/fonts';
+import { Footer } from '@/sections/footer/footer';
+import { Header } from '@/sections/header/header';
 
 export const metadata: Metadata = {
 	title: 'Moshka',
@@ -33,7 +36,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
 	return (
 		<html lang="ru" className={unbounded.variable}>
-			<body className={sffont.className}>{children}</body>
+			<body className={sffont.className}>
+				<div className="wrapper">
+					<Header />
+					{children}
+					<Footer />
+				</div>
+			</body>
 		</html>
 	);
 }

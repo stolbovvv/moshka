@@ -1,0 +1,66 @@
+@keyframes anim-button-dor-fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em 2em;
+	border: 1px solid currentColor;
+	border-radius: 999rem;
+	background-color: transparent;
+	text-decoration: none;
+	font-family: var(--ff-accent);
+	font-weight: 700;
+	color: inherit;
+	cursor: pointer;
+	transition: all var(--transition-sm);
+}
+
+.button:is(:active) {
+	transform: scale(0.9375);
+}
+
+.button[data-theme="blue"] {
+	border-color: transparent;
+	background-color: var(--clr-blue-3);
+	color: var(--clr-neutral-1);
+}
+
+.button[data-theme="blue"]:is(:focus, :hover) {
+	background-color: var(--clr-blue-4);
+}
+
+.button[data-theme="dark"] {
+	border-color: transparent;
+	background-color: var(--clr-dark-1);
+	color: var(--clr-neutral-1);
+}
+
+.button[data-theme="dark"]:is(:focus, :hover) {
+	background-color: var(--clr-dark-2);
+}
+
+.button[data-theme="blue"]::after,
+.button[data-theme="dark"]::after {
+	content: "";
+	width: 0.5rem;
+	height: 0.5rem;
+	flex: 0 0 auto;
+	border-radius: 100%;
+	margin-left: 0.5em;
+	background-color: var(--clr-red-1);
+	animation: anim-button-dor-fade infinite alternate 1s;
+}
+
+.button[data-theme="transparent"] {
+	border-color: currentColor;
+	background-color: transparent;
+	color: currentColor;
+}
