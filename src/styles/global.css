@@ -1,0 +1,93 @@
+:root {
+	--clr-neutral-1: #ffffff;
+	--clr-neutral-2: #f5f5f5;
+	--clr-neutral-3: #383838;
+	--clr-neutral-4: #2e2e2e;
+	--clr-neutral-5: #252525;
+	--clr-dark-1: #484a4e;
+	--clr-dark-2: #3d4046;
+	--clr-dark-3: #2b2f35;
+	--clr-red-1: #df4142;
+	--clr-red-2: #c02222;
+	--clr-blue-1: #e8f5ff;
+	--clr-blue-2: #d3ecff;
+	--clr-blue-3: #4eb4ff;
+	--clr-blue-4: #379fec;
+	--clr-yellow-1: #fbffcc;
+
+	--radius-sm: 0.625rem;
+	--radius-md: 1.25rem;
+	--radius-lg: 1.875rem;
+
+	--transition-sm: 0.2s ease;
+	--transition-md: 0.4s ease;
+	--transition-lg: 0.6s ease;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (width > 100em) {
+	html {
+		font-size: 1vw;
+	}
+}
+
+body {
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.4;
+	background: var(--clr-neutral-1);
+}
+
+input,
+textarea,
+select,
+button {
+	font: inherit;
+}
+
+img,
+svg,
+video,
+picture {
+	display: block;
+	max-width: 100%;
+}
+
+:target {
+	scroll-margin-block: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+@media screen and (width < 80em) {
+	body {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (width < 64em) {
+	body {
+		font-size: 0.875rem;
+	}
+}

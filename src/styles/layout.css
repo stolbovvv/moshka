@@ -1,0 +1,43 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	min-height: 100vh;
+	min-height: 100dvh;
+	width: min(100rem, 100%);
+	margin: 0 auto;
+	padding: 1.25rem 0 0 0;
+}
+
+.wrapper > main {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	margin: 0 1.25rem;
+}
+
+.wrapper > header {
+	flex: 0 0 auto;
+	margin: 0 1.25rem;
+}
+
+.wrapper > footer {
+	flex: 0 0 auto;
+}
+
+@media screen and (width < 48rem) {
+	.wrapper {
+		gap: 0.625rem;
+		padding: 0.625rem 0 0 0;
+	}
+
+	.wrapper > main {
+		gap: 0.625rem;
+		margin: 0 0.625rem;
+	}
+
+	.wrapper > header {
+		margin: 0 0.625rem;
+	}
+}
