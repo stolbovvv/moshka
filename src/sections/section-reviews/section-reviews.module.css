@@ -22,6 +22,10 @@
 	line-height: 1.2;
 }
 
+.slider__slide {
+	height: auto !important;
+}
+
 .slider__navbar {
 	display: flex;
 	align-items: center;

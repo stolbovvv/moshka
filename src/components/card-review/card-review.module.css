@@ -1,9 +1,11 @@
 .wrap {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 0.625rem;
 	padding: 1.875rem;
 	border-radius: var(--radius-sm);
 	background-color: var(--clr-dark-2);
+	height: 100%;
 }
 
 .head {

@@ -39,25 +39,9 @@
 .item {
 	flex: 0 0 auto;
 	padding: 0.625em;
-	border-radius: var(--radius-sm);
+	border-radius: 999rem;
 	background-color: var(--clr-red-2);
 	font-size: 1.5rem;
-}
-
-.item:nth-child(1) {
-	width: calc(60% - 0.625rem / 2);
-}
-
-.item:nth-child(4) {
-	width: calc(55% - 0.625rem / 2);
-}
-
-.item:nth-child(2) {
-	width: calc(40% - 0.625rem / 2);
-}
-
-.item:nth-child(3) {
-	width: calc(45% - 0.625rem / 2);
 }
 
 .price {
@@ -133,10 +117,6 @@
 	.body {
 		align-items: flex-start;
 	}
-
-	.list {
-		max-width: 25rem;
-	}
 }
 
 @media screen and (width < 48em) {
@@ -151,13 +131,17 @@
 	.price__value {
 		font-size: 1.75rem;
 	}
+
+	.list {
+		gap: 0.5rem;
+	}
+
+	.item {
+		font-size: 1rem;
+	}
 }
 
 @media screen and (width < 36em) {
-	.item:nth-child(1n) {
-		width: 100%;
-	}
-
 	.button {
 		width: 100%;
 	}

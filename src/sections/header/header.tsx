@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/ui/button/button';
 import styles from './header.module.css';
 
@@ -19,6 +19,10 @@ const navigation = [
 
 export function Header() {
 	const [open, setOpen] = useState(false);
+
+	useEffect(() => {
+		document.body.style.overflow = open ? 'hidden' : 'auto';
+	}, [open]);
 
 	return (
 		<header className={styles.wrap}>

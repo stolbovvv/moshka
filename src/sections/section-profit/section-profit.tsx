@@ -5,22 +5,18 @@ export function SectionProfit() {
 	return (
 		<section className={styles.wrap} id="section-profit">
 			<div className={styles.head}>
-				<h2 className={styles.heading}>Сразу после подписки ты получишь</h2>
+				<h2 className={styles.heading}>Получите все курсы сразу с подпиской</h2>
 			</div>
 			<div className={styles.body}>
 				<ul className={styles.list}>
-					<li className={styles.item}>
-						<span className="fw-700">10</span> курсов, мастер-классов и лекций
-					</li>
-					<li className={styles.item}>
-						<span className="fw-700">44</span> часа видео уроков
-					</li>
-					<li className={styles.item}>
-						<span className="fw-700">47</span> конспектов и рабочих тетрадей
-					</li>
-					<li className={styles.item}>
-						<span className="fw-700">32</span> домашних задания для самопроверок
-					</li>
+					<li className={styles.item}>режиссура</li>
+					<li className={styles.item}>нейросети</li>
+					<li className={styles.item}>драматургия сериалов</li>
+					<li className={styles.item}>мобильная съемка</li>
+					<li className={styles.item}>блогинг</li>
+					<li className={styles.item}>визуальные образы</li>
+					<li className={styles.item}>вдохновение</li>
+					<li className={styles.item}>сторителлинг</li>
 				</ul>
 				<div className={styles.price}>
 					<p className={styles.price__label}>Цена фиксирована</p>

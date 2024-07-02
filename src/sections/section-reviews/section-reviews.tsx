@@ -7,6 +7,7 @@ import IconArrowRight from '@/assets/icons/arrow-right.svg';
 import { CardReview } from '@/components/card-review/card-review';
 import 'swiper/css';
 import styles from './section-reviews.module.css';
+import Image from 'next/image';
 
 const swiperOptions: SwiperProps = {
 	slidesPerView: 1,
@@ -32,7 +33,7 @@ export function SectionReviews({ data }: { data: ReviewsData[] }) {
 			<div className={styles.body}>
 				<Swiper {...swiperOptions}>
 					{data.map((item, index) => (
-						<SwiperSlide key={index}>
+						<SwiperSlide className={styles.slider__slide} key={index}>
 							<CardReview data={item} />
 						</SwiperSlide>
 					))}
@@ -49,10 +50,10 @@ function SwipertNavigation() {
 	return (
 		<div className={styles.slider__navbar}>
 			<button className={styles.slider__button} onClick={() => swiper.slidePrev()}>
-				<IconArrowLeft />
+				<Image src={IconArrowLeft} alt="" />
 			</button>
 			<button className={styles.slider__button} onClick={() => swiper.slideNext()}>
-				<IconArrowRight />
+				<Image src={IconArrowRight} alt="" />
 			</button>
 		</div>
 	);

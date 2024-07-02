@@ -1,5 +1,6 @@
 'use client';
 
+import type { FaqData } from '@/types/Faq';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './card-faq.module.css';
@@ -37,7 +38,7 @@ const variants = {
 	},
 };
 
-export function CardFaq() {
+export function CardFaq({ data: { title, content } }: { data: FaqData }) {
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -49,7 +50,7 @@ export function CardFaq() {
 		>
 			<div className={styles.head}>
 				<h3 className={styles.heading} onClick={() => setOpen(!open)}>
-					Для обучения достаточно одного телефона, или нужно приобретать дополнительные гаджеты для съемок?
+					{title}
 				</h3>
 				<motion.button
 					className={styles.button}
@@ -68,14 +69,7 @@ export function CardFaq() {
 				animate={open ? 'open' : 'hide'}
 				variants={variants.content}
 			>
-				<div className={styles.content}>
-					<ul>
-						<li>научитесь превращать свои идеи и задумки в сюжеты и истории</li>
-						<li>поймёте как вести контент без напряжения и выстраивать отношения с аудиторией</li>
-						<li>получите практические навыки и обретёте уверенность</li>
-						<li>начнёте проявляться в мире соцсетей</li>
-					</ul>
-				</div>
+				<div className={styles.content}>{content}</div>
 			</motion.div>
 		</motion.div>
 	);

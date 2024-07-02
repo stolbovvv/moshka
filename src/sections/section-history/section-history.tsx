@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './section-history.module.css';
 
 export function SectionHistory() {
@@ -19,21 +20,33 @@ export function SectionHistory() {
 				</video>
 			</div>
 			<div className={styles.body}>
-				<h2 className={styles.heading}>История, которую увидит весь мир, будет вашей</h2>
-				<p className={styles.text}>
-					Вы никогда не думали о жизни, как об одном большом сценарии, который мы сочиняем сами?
-				</p>
-				<blockquote className={styles.blockquote}>
-					<div className={styles.blockquote__body}>
-						<p>
-							«Мы — персонажи фильма любимого жанра и все, что мы делаем в нашей жизни, влияет на финал.
-							So make it a good one!»
-						</p>
-					</div>
-					<cite className={styles.blockquote__cite}>
-						Денис Елдышов (Специалист по визуальным эффектам FXTD)
-					</cite>
-				</blockquote>
+				<h2 className={styles.heading}>Мы живём в эпоху контента</h2>
+				<ul className={styles.list}>
+					<li>более 1 миллиона часов видео и более 100 миллионов коротких роликов публикуется ежедневно</li>
+					<li>более 50 платформ предлагают различные способы монетизации контента</li>
+					<li>бренды, компании, артисты и политики общаются с аудиторией с помощью блогов</li>
+				</ul>
+				<Link className={styles.link} href="#">
+					Подробнее в видео
+				</Link>
+			</div>
+			<div className={styles.foot}>
+				<div className={styles.card}>
+					<h3 className={styles.card__heading}>Любая профессия связана с созданием контента</h3>
+					<ul className={styles.card__list}>
+						<li>главный капитал — это внимание аудитории</li>
+						<li>преуспевают и получают клиентов те, кто умеет рассказать о себе</li>
+						<li>покупают у тех, кого знают и кому доверяют</li>
+					</ul>
+				</div>
+				<div className={styles.card}>
+					<h3 className={styles.card__heading}>Каждый человек — автор контента</h3>
+					<ul className={styles.card__list}>
+						<li>получить доступ к аудитории никогда не было так просто и легко</li>
+						<li>достаточно телефона, который лежит в твоём кармане</li>
+						<li>каждый может рассказать свою историю</li>
+					</ul>
+				</div>
 			</div>
 		</section>
 	);

@@ -29,16 +29,16 @@ export function Footer() {
 				/>
 				<div className={styles.social}>
 					<Link className={styles.social__link} href="#" target="_blank">
-						<IconVkontakte className={styles.social__icon} />
+						<Image className={styles.social__icon} src={IconVkontakte} alt="" />
 					</Link>
 					<Link className={styles.social__link} href="#" target="_blank">
-						<IconTelegram className={styles.social__icon} />
+						<Image className={styles.social__icon} src={IconTelegram} alt="" />
 					</Link>
 					<Link className={styles.social__link} href="#" target="_blank">
-						<IconYoutube className={styles.social__icon} />
+						<Image className={styles.social__icon} src={IconYoutube} alt="" />
 					</Link>
 					<Link className={styles.social__link} href="#" target="_blank">
-						<IconDzen className={styles.social__icon} />
+						<Image className={styles.social__icon} src={IconDzen} alt="" />
 					</Link>
 				</div>
 				<ul className={styles.menu}>
