@@ -13,9 +13,12 @@ import { SectionReviews } from '@/sections/section-reviews/section-reviews';
 import { SectionFaq } from '@/sections/section-faq/section-faq';
 import { SectionForWhom } from '@/sections/section-for-whom/section-for-whom';
 
+// const API_HOST = 'https://moshka-api.vercel.app/';
+const API_HOST = 'http://localhost:3001';
+
 async function getResources(): Promise<ResourceData[]> {
 	try {
-		const response = await fetch('http:/localhost:3030/resources', {
+		const response = await fetch(`https://moshka-api.vercel.app/resources`, {
 			cache: 'no-cache',
 		});
 
@@ -27,7 +30,7 @@ async function getResources(): Promise<ResourceData[]> {
 
 async function getReviews(): Promise<ReviewsData[]> {
 	try {
-		const response = await fetch('http:/localhost:3030/reviews', {
+		const response = await fetch(`https://moshka-api.vercel.app/reviews`, {
 			cache: 'no-cache',
 		});
 
@@ -39,9 +42,12 @@ async function getReviews(): Promise<ReviewsData[]> {
 
 async function getFaq(): Promise<FaqData[]> {
 	try {
-		const response = await fetch('http:/localhost:3030/faq', {
+		const response = await fetch(`${API_HOST}/faq`, {
 			cache: 'no-cache',
 		});
+
+		console.log();
+
 		return await response.json();
 	} catch {
 		return [];

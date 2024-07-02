@@ -1,7 +1,6 @@
 .wrap {
 	display: flex;
-	flex-direction: column;
-	gap: 2.5rem;
+	gap: 1.25rem;
 	padding: 2.5rem;
 	border-radius: var(--radius-lg);
 	background: var(--clr-blue-1) url("./section-for-whom-decor.svg") center / cover no-repeat;
@@ -21,13 +20,7 @@
 	line-height: 1.2;
 }
 
-.body {
-	display: flex;
-	gap: 1.25rem;
-	min-width: 0;
-}
-
-.body__sidebar {
+.head {
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;
@@ -57,7 +50,7 @@
 	transform: translateX(-1.25rem);
 }
 
-.body__content {
+.body {
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;
@@ -66,7 +59,7 @@
 	min-width: 0;
 }
 
-.body__content .heading {
+.body .heading {
 	display: none;
 }
 
@@ -180,11 +173,11 @@
 		font-size: 1.875rem;
 	}
 
-	.body__sidebar .heading {
+	.head .heading {
 		display: none;
 	}
 
-	.body__content .heading {
+	.body .heading {
 		display: block;
 	}
 
@@ -227,7 +220,7 @@
 	}
 
 	.body__sidebar,
-	.body__content {
+	.body {
 		width: 100%;
 	}
 
@@ -235,7 +228,7 @@
 		display: block;
 	}
 
-	.body__content .heading {
+	.body .heading {
 		display: none;
 	}
 

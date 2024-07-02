@@ -1,6 +1,6 @@
 'use client';
 
-import type { FaqData } from '@/types/Faq';
+import type { FaqItem } from '@/types/Faq';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './card-faq.module.css';
@@ -38,7 +38,7 @@ const variants = {
 	},
 };
 
-export function CardFaq({ data: { title, content } }: { data: FaqData }) {
+export function CardFaq({ data: { title, content } }: { data: FaqItem }) {
 	const [open, setOpen] = useState(false);
 
 	return (

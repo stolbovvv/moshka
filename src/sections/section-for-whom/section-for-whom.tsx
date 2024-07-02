@@ -4,7 +4,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { Swiper, SwiperProps, SwiperSlide, useSwiper } from 'swiper/react';
-import { Autoplay, Controller, EffectFade } from 'swiper/modules';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import IconArrowLeft from '@/assets/icons/arrow-left.svg';
 import IconArrowRight from '@/assets/icons/arrow-right.svg';
 import image1 from './image-1.png';
@@ -66,58 +66,53 @@ const sliderOptions: SwiperProps = {
 	slidesPerView: 1,
 	effect: 'fade',
 	speed: 1000,
-	modules: [EffectFade, Autoplay, Controller],
+	loop: true,
+	autoplay: {
+		delay: 5000,
+		pauseOnMouseEnter: false,
+		disableOnInteraction: false,
+	},
+	modules: [EffectFade, Autoplay],
 };
 
 export function SectionForWhom() {
 	const [picture, setPicture] = useState(0);
-	const [firstSwiper, setFirstSwiper] = useState<any>(null);
-	const [secondSwiper, setSecondSwiper] = useState<any>(null);
 
 	const onPictureChange = (swiper: any) => {
 		setPicture(swiper.realIndex);
-		console.log(swiper.realIndex);
 	};
 
 	return (
 		<section className={styles.wrap} id="section-for-whom">
+			<div className={styles.head}>
+				<h2 className={styles.heading}>
+					Кому будет <br />
+					полезно?
+				</h2>
+				<Swiper className={styles.pictures} onSlideChange={onPictureChange} {...sliderOptions}>
+					{cards.map((card, index) => (
+						<SwiperSlide className={styles.pictures__slide} key={index} virtualIndex={index}>
+							{({ isActive }) => (
+								<Image
+									className={styles.image}
+									src={card.img}
+									alt=""
+									width={500}
+									height={784}
+									style={{ visibility: isActive ? 'visible' : 'hidden' }}
+								/>
+							)}
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
 			<div className={styles.body}>
-				<div className={styles.body__sidebar}>
-					<h2 className={styles.heading}>
-						Кому будет <br />
-						полезно?
-					</h2>
-					<Swiper
-						className={styles.pictures}
-						{...sliderOptions}
-						onSlideChange={onPictureChange}
-						onSwiper={setFirstSwiper}
-						controller={{ control: secondSwiper }}
-					>
-						{cards.map((card, index) => (
-							<SwiperSlide className={styles.pictures__slide} key={index} virtualIndex={index}>
-								{({ isActive }) => (
-									<Image
-										className={styles.image}
-										src={card.img}
-										alt=""
-										width={500}
-										height={784}
-										style={{ visibility: isActive ? 'visible' : 'hidden' }}
-									/>
-								)}
-							</SwiperSlide>
-						))}
-					</Swiper>
-				</div>
-				<div className={styles.body__content}>
-					<h2 className={styles.heading}>
-						Кому будет <br />
-						полезно?
-					</h2>
-					<Slider setSecondSwiper={setSecondSwiper} firstSwiper={firstSwiper} />
-					<Cards current={picture} />
-				</div>
+				<h2 className={styles.heading}>
+					Кому будет <br />
+					полезно?
+				</h2>
+				<Slider />
+				<Cards current={picture} />
 			</div>
 		</section>
 	);
@@ -142,15 +137,9 @@ function Cards({ current }: { current: number }) {
 	);
 }
 
-function Slider({ setSecondSwiper, firstSwiper }: { setSecondSwiper: any; firstSwiper: any }) {
+function Slider() {
 	return (
-		<Swiper
-			className={styles.slider}
-			wrapperClass={styles.slider__wrapper}
-			onSwiper={setSecondSwiper}
-			controller={{ control: firstSwiper }}
-			modules={[Controller]}
-		>
+		<Swiper className={styles.slider} wrapperClass={styles.slider__wrapper} loop={true} speed={1000}>
 			{cards.map((card, index) => (
 				<SwiperSlide key={index} className={styles.slider__slide}>
 					<div key={index} className={styles.card} data-theme={card.theme}>

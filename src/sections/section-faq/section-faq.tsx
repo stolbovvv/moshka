@@ -1,33 +1,16 @@
 'use client';
 
-import type { FaqData } from '@/types/Faq';
-import { useEffect, useState } from 'react';
+import type { FaqData, FaqItem } from '@/types/Faq';
 import clsx from 'clsx';
+import { useEffect, useState } from 'react';
 import { CardFaq } from '@/components/card-faq/card-faq';
 import styles from './section-faq.module.css';
 
 export function SectionFaq({ data }: { data: FaqData[] }) {
-	const [filter, setFilter] = useState<string>('');
-	const [filterData, setFilterData] = useState<FaqData[]>([]);
-
-	const tabs = Array.from(new Set(data.map((item) => item.category)));
-
-	useEffect(() => {}, [filter, data]);
-
-	const changeFilter = (type: string) => {
-		setFilter(type);
-	};
+	const [current, setCurrent] = useState<{ id: string | null; faqs: FaqItem[] }>({ id: null, faqs: [] });
 
 	useEffect(() => {
-		if (filter) {
-			setFilterData(data.filter((item) => item.category === filter));
-		} else {
-			setFilterData(data);
-		}
-	}, [filter, data]);
-
-	useEffect(() => {
-		changeFilter(data[0]?.category);
+		data.length && setCurrent({ id: data[0].id, faqs: data[0].faqs });
 	}, [data]);
 
 	return (
@@ -35,21 +18,22 @@ export function SectionFaq({ data }: { data: FaqData[] }) {
 			<div className={styles.head}>
 				<h2 className={styles.heading}>Вопросы и ответы</h2>
 				<div className={styles.tabs}>
-					{tabs.map((item, index) => (
-						<button
-							key={index}
-							className={clsx(styles.tabs__button, {
-								[styles.tabs__button_current]: filter === item,
-							})}
-							onClick={() => changeFilter(item)}
-						>
-							{item}
-						</button>
-					))}
+					{data.length &&
+						data.map(({ id, name, faqs }) => (
+							<button
+								key={id}
+								className={clsx(styles.tabs__button, {
+									[styles.tabs__button_current]: id === current.id,
+								})}
+								onClick={() => setCurrent({ id, faqs })}
+							>
+								{name}
+							</button>
+						))}
 				</div>
 			</div>
 			<div className={styles.body}>
-				{filterData.map((data) => (
+				{current.faqs.map((data) => (
 					<CardFaq key={data.id} data={data} />
 				))}
 			</div>
