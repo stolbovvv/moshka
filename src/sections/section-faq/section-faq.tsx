@@ -18,18 +18,19 @@ export function SectionFaq({ data }: { data: FaqData[] }) {
 			<div className={styles.head}>
 				<h2 className={styles.heading}>Вопросы и ответы</h2>
 				<div className={styles.tabs}>
-					{data.length &&
-						data.map(({ id, name, faqs }) => (
-							<button
-								key={id}
-								className={clsx(styles.tabs__button, {
-									[styles.tabs__button_current]: id === current.id,
-								})}
-								onClick={() => setCurrent({ id, faqs })}
-							>
-								{name}
-							</button>
-						))}
+					{data.length
+						? data.map(({ id, name, faqs }) => (
+								<button
+									key={id}
+									className={clsx(styles.tabs__button, {
+										[styles.tabs__button_current]: id === current.id,
+									})}
+									onClick={() => setCurrent({ id, faqs })}
+								>
+									{name}
+								</button>
+							))
+						: ''}
 				</div>
 			</div>
 			<div className={styles.body}>
