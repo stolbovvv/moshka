@@ -211,20 +211,20 @@
 }
 
 @media screen and (width < 48em) {
+	.wrap {
+		flex-direction: column;
+	}
+
 	.heading {
 		font-size: 1.375rem;
 	}
 
-	.body {
-		flex-direction: column;
-	}
-
-	.body__sidebar,
+	.head,
 	.body {
 		width: 100%;
 	}
 
-	.body__sidebar .heading {
+	.head .heading {
 		display: block;
 	}
 
