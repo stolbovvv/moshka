@@ -82,7 +82,7 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 					</Button>
 				</div>
 			</section>
-			<PopupPesource />
+			<PopupPesource isOpend={false} />
 		</>
 	);
 }
