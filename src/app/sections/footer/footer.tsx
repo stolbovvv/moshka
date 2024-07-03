@@ -7,13 +7,13 @@ import IconTelegram from '@/assets/icons/telegram.svg';
 import IconVkontakte from '@/assets/icons/vkontakte.svg';
 
 const navigation = [
-	{ href: '#section-history', text: 'Чем полезна Moshka' },
-	{ href: '#section-for-whom', text: 'Для кого' },
-	{ href: '#section-banner', text: 'О проекте' },
-	{ href: '#section-resources', text: 'Курсы' },
-	{ href: '#section-profit', text: 'Цена' },
-	{ href: '#section-reviews', text: 'Отзывы' },
-	{ href: '#section-faq', text: 'FAQ' },
+	{ href: '/#section-history', text: 'Чем полезна Moshka' },
+	{ href: '/#section-for-whom', text: 'Для кого' },
+	{ href: '/#section-banner', text: 'О проекте' },
+	{ href: '/#section-resources', text: 'Курсы' },
+	{ href: '/#section-profit', text: 'Цена' },
+	{ href: '/#section-reviews', text: 'Отзывы' },
+	{ href: '/#section-faq', text: 'FAQ' },
 ];
 
 export function Footer() {

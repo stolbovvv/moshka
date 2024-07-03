@@ -21,6 +21,7 @@
 	color: inherit;
 	cursor: pointer;
 	transition: all var(--transition-sm);
+	text-align: center;
 }
 
 .button:is(:active) {
