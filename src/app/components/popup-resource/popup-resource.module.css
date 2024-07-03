@@ -4,12 +4,13 @@
 	padding: 1.25rem;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 1000;
+	overflow: hidden auto;
+	backdrop-filter: blur(10px);
 }
 
 .wrap {
 	position: relative;
-	height: 100%;
-	padding: 4rem 1.25rem 2.5rem 1.25rem;
+	padding: 2.5rem 1.25rem;
 	border-radius: var(--radius-lg);
 	background-color: var(--clr-neutral-1);
 }
@@ -52,22 +53,6 @@
 	flex-direction: column;
 	gap: 1.25rem;
 	padding: 0 1.25rem;
-	height: 100%;
-	overflow: hidden auto;
-}
-
-.body::-webkit-scrollbar {
-	height: 0.25rem;
-	width: 0.25rem;
-}
-.body::-webkit-scrollbar-track {
-	border-radius: 999rem;
-	background-color: var(--clr-blue-2);
-}
-
-.body::-webkit-scrollbar-thumb {
-	border-radius: 999rem;
-	background-color: var(--clr-blue-4);
 }
 
 .grid {
@@ -216,7 +201,7 @@
 	}
 
 	.wrap {
-		padding: 2.5rem 0rem 1.25rem 0rem;
+		padding: 1.25rem 0rem;
 		border-radius: var(--radius-sm);
 	}
 
