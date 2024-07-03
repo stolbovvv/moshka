@@ -9,22 +9,23 @@ export type ButtonProps = {
 	href?: string;
 	target?: string;
 	children?: ReactNode;
+	notDot?: boolean;
 	onClick?: () => void;
 };
 
-export function Button({ className, theme = 'blue', href, children, target, onClick, ...props }: ButtonProps) {
+export function Button({ className, theme = 'blue', notDot, href, children, target, onClick, ...props }: ButtonProps) {
 	const classes = clsx(className, styles.button);
 
 	if (href) {
 		return (
-			<Link className={classes} data-theme={theme} href={href} target={target} {...props}>
+			<Link className={classes} data-theme={theme} data-not-dot={notDot} href={href} target={target} {...props}>
 				{children}
 			</Link>
 		);
 	}
 
 	return (
-		<button className={classes} data-theme={theme} onClick={onClick} {...props}>
+		<button className={classes} data-theme={theme} data-not-dot={notDot} onClick={onClick} {...props}>
 			{children}
 		</button>
 	);

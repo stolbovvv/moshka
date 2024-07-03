@@ -1,4 +1,4 @@
-import { Button } from '@/ui/button/button';
+import { Button } from '@/app/ui/button/button';
 import styles from './section-profit.module.css';
 
 export function SectionProfit() {

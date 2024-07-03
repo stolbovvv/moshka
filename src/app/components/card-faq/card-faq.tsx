@@ -1,6 +1,6 @@
 'use client';
 
-import type { FaqItem } from '@/types/Faq';
+import type { Faq } from '@/lib/definitions';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './card-faq.module.css';
@@ -38,7 +38,7 @@ const variants = {
 	},
 };
 
-export function CardFaq({ data: { title, content } }: { data: FaqItem }) {
+export function CardFaq({ data: { question, answer } }: { data: Faq }) {
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -50,7 +50,7 @@ export function CardFaq({ data: { title, content } }: { data: FaqItem }) {
 		>
 			<div className={styles.head}>
 				<h3 className={styles.heading} onClick={() => setOpen(!open)}>
-					{title}
+					{question}
 				</h3>
 				<motion.button
 					className={styles.button}
@@ -69,7 +69,7 @@ export function CardFaq({ data: { title, content } }: { data: FaqItem }) {
 				animate={open ? 'open' : 'hide'}
 				variants={variants.content}
 			>
-				<div className={styles.content}>{content}</div>
+				<div className={styles.content}>{answer}</div>
 			</motion.div>
 		</motion.div>
 	);

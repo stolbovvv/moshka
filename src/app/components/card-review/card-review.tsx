@@ -1,8 +1,8 @@
-import type { ReviewsData } from '@/types/Reviews';
 import Image from 'next/image';
 import styles from './card-review.module.css';
+import { Review } from '@/lib/definitions';
 
-export function CardReview({ data: { name, info, photo, content } }: { data: ReviewsData }) {
+export function CardReview({ data: { name, info, photo, content } }: { data: Review }) {
 	return (
 		<div className={styles.wrap}>
 			<div className={styles.head}>

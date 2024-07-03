@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
-import { Button } from '@/ui/button/button';
+import { Button } from '@/app/ui/button/button';
 import styles from './header.module.css';
 
 const navigation = [

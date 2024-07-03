@@ -39,12 +39,12 @@
 
 .button[data-theme="dark"] {
 	border-color: transparent;
-	background-color: var(--clr-dark-1);
+	background-color: var(--clr-dark-2);
 	color: var(--clr-neutral-1);
 }
 
 .button[data-theme="dark"]:is(:focus, :hover) {
-	background-color: var(--clr-dark-2);
+	background-color: var(--clr-dark-3);
 }
 
 .button[data-theme="blue"]::after,
@@ -57,6 +57,10 @@
 	margin-left: 0.5em;
 	background-color: var(--clr-red-1);
 	animation: anim-button-dor-fade infinite alternate 1s;
+}
+
+.button[data-not-dot="true"]::after {
+	display: none;
 }
 
 .button[data-theme="transparent"] {

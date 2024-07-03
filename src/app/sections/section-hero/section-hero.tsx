@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button } from '@/ui/button/button';
+import { Button } from '@/app/ui/button/button';
 import styles from './section-hero.module.css';
 
 export function SectionHero() {
@@ -10,7 +10,7 @@ export function SectionHero() {
 					<span className="fw-700">Научись снимать</span> свои истории, как в кино
 				</h1>
 				<p className={styles.text}>
-					Опыт мастеров кино, сторителлинга, блогинга и мобильной съёмки - 
+					Опыт мастеров кино, сторителлинга, блогинга и мобильной съёмки -
 					<span className="fw-600">за 8900 ₽ в год</span>
 				</p>
 				<Button className={styles.button} href="https://getcourse.ru/">

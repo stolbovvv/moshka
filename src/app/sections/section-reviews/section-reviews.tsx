@@ -1,13 +1,12 @@
 'use client';
 
-import type { ReviewsData } from '@/types/Reviews';
+import type { Review } from '@/lib/definitions';
+import Image from 'next/image';
 import { Swiper, type SwiperProps, SwiperSlide, useSwiper } from 'swiper/react';
 import IconArrowLeft from '@/assets/icons/arrow-left.svg';
 import IconArrowRight from '@/assets/icons/arrow-right.svg';
-import { CardReview } from '@/components/card-review/card-review';
-import 'swiper/css';
+import { CardReview } from '@/app/components/card-review/card-review';
 import styles from './section-reviews.module.css';
-import Image from 'next/image';
 
 const swiperOptions: SwiperProps = {
 	slidesPerView: 1,
@@ -21,7 +20,7 @@ const swiperOptions: SwiperProps = {
 	},
 };
 
-export function SectionReviews({ data }: { data: ReviewsData[] }) {
+export function SectionReviews({ reviews }: { reviews: Review[] }) {
 	return (
 		<section className={styles.wrap} id="section-reviews">
 			<div className={styles.head}>
@@ -32,9 +31,9 @@ export function SectionReviews({ data }: { data: ReviewsData[] }) {
 			</div>
 			<div className={styles.body}>
 				<Swiper {...swiperOptions}>
-					{data.map((item, index) => (
-						<SwiperSlide className={styles.slider__slide} key={index}>
-							<CardReview data={item} />
+					{reviews.map((review) => (
+						<SwiperSlide className={styles.slider__slide} key={review.id}>
+							<CardReview data={review} />
 						</SwiperSlide>
 					))}
 					<SwipertNavigation />

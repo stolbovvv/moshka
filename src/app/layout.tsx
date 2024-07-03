@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import 'sanitize.css';
+import 'swiper/css';
 import '@/assets/styles/global.css';
 import '@/assets/styles/layout.css';
 import '@/assets/styles/helper.css';
 import { sffont, unbounded } from '@/assets/fonts';
-import { Footer } from '@/sections/footer/footer';
-import { Header } from '@/sections/header/header';
+import { Footer } from '@/app/sections/footer/footer';
+import { Header } from '@/app/sections/header/header';
 
 export const metadata: Metadata = {
 	title: 'Moshka',

@@ -1,11 +1,11 @@
-import type { ResourceData } from '@/types/Resource';
+import type { Resource } from '@/lib/definitions';
 import Image from 'next/image';
 import styles from './card-resource.module.css';
 
 export function CardResource({
-	data: { title, thumb, author, duration, complexity, tags, price, type },
+	data: { title, thumb, author, duration, complexity, tags, price, category },
 }: {
-	data: ResourceData;
+	data: Resource;
 }) {
 	return (
 		<div className={styles.wrap}>
@@ -35,7 +35,7 @@ export function CardResource({
 			</div>
 			<div className={styles.foot}>
 				<button className={styles.more}>Подробнее</button>
-				<p className={styles.type}>{type}</p>
+				<p className={styles.type}>{category.name}</p>
 			</div>
 		</div>
 	);
