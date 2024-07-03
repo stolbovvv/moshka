@@ -9,12 +9,12 @@ const cards = [
 	},
 	{
 		heading: 'Самопроверка',
-		content: 'Домашние задания для самопроверки',
+		content: 'Домашние задания для самопроверки',
 		theme: 'neutral',
 	},
 	{
 		heading: 'Курс по подписке',
-		content: 'Рассказать про концепцию подписки',
+		content: 'Авторские лонгриды и материалы',
 		theme: 'yellow',
 	},
 ];
@@ -22,13 +22,43 @@ const cards = [
 export function SectionBanner() {
 	return (
 		<section className={styles.wrap} id="section-banner">
-			<Image
-				className={styles.image}
-				src="/images/moshka-black.svg"
-				alt="Moshka – международная онлайн школа контента."
-				width={890}
-				height={382}
-			/>
+			<div className={styles.head}>
+				<ul className={styles.list}>
+					<li className={styles.stick} data-item="1">
+						Мастер-классы
+					</li>
+					<li className={styles.stick} data-item="2">
+						Лекции
+					</li>
+					<li className={styles.stick} data-item="3">
+						Практические навыки
+					</li>
+					<li className={styles.stick} data-item="4">
+						Контент
+					</li>
+				</ul>
+				<Image
+					className={styles.image}
+					src="/images/moshka-black.svg"
+					alt="Moshka – международная онлайн школа контента."
+					width={890}
+					height={382}
+				/>
+				<ul className={styles.list}>
+					<li className={styles.stick} data-item="5">
+						Cторителлинг
+					</li>
+					<li className={styles.stick} data-item="6">
+						Курсы
+					</li>
+					<li className={styles.stick} data-item="7">
+						Видео
+					</li>
+					<li className={styles.stick} data-item="8">
+						Вдохновение
+					</li>
+				</ul>
+			</div>
 
 			<div className={styles.body}>
 				{cards.map(({ theme, heading, content }, index) => (

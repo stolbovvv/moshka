@@ -21,8 +21,8 @@ export default async function Home() {
 			<SectionHero />
 			<SectionInfo />
 			<SectionHistory />
-			<SectionForWhom />
 			<SectionBanner />
+			<SectionForWhom />
 			{resources && <SectionResources resources={resources} />}
 			<SectionProfit />
 			<SectionPayment />

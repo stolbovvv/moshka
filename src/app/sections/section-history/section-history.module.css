@@ -81,6 +81,9 @@
 }
 
 .card__list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.875em;
 	margin: auto 0 0 0;
 	padding-left: 1.25em;
 }

@@ -30,9 +30,9 @@ export function SectionReviews({ reviews }: { reviews: Review[] }) {
 				</h2>
 			</div>
 			<div className={styles.body}>
-				<Swiper {...swiperOptions}>
-					{reviews.map((review) => (
-						<SwiperSlide className={styles.slider__slide} key={review.id}>
+				<Swiper className={styles.slider} {...swiperOptions}>
+					{reviews.map((review, index) => (
+						<SwiperSlide className={styles.slider__slide} key={review?.id || index}>
 							<CardReview data={review} />
 						</SwiperSlide>
 					))}

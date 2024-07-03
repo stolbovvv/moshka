@@ -42,6 +42,7 @@
 	transition: var(--transition-sm);
 }
 
+.tabs__button:is(:focus, :hover),
 .tabs__button_current {
 	opacity: 1;
 }
@@ -72,7 +73,13 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+	gap: 1.25rem;
+}
+
+.buttons {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 	gap: 1.25rem;
 }
 
@@ -92,6 +99,18 @@
 		gap: 0.625rem;
 		flex-direction: column;
 		align-items: flex-start;
+	}
+
+	.body {
+		gap: 1.25rem;
+	}
+
+	.grid {
+		gap: 0.625rem;
+	}
+
+	.buttons {
+		gap: 0.625rem;
 	}
 }
 
@@ -120,7 +139,6 @@
 	border-radius: 999rem;
 	background-color: var(--clr-blue-2);
 }
-
 .tabs::-webkit-scrollbar-thumb {
 	border-radius: 999rem;
 	background-color: var(--clr-blue-4);

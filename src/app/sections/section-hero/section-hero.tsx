@@ -7,16 +7,13 @@ export function SectionHero() {
 		<section className={styles.wrap} id="section-hero">
 			<div className={styles.head}>
 				<h1 className={styles.heading}>
-					<span className="fw-700">Научись снимать</span> свои истории, как в кино
+					Научись <span className="fw-700">рассказывать</span> свои истории, как <br />
+					в кино
 				</h1>
-				<p className={styles.text}>
-					Опыт мастеров кино, сторителлинга, блогинга и мобильной съёмки -
-					<span className="fw-600">за 8900 ₽ в год</span>
-				</p>
+				<p className={styles.text}>Получи опыт мастеров кино, сторителлинга, блогинга и мобильной съёмки</p>
 				<Button className={styles.button} href="https://getcourse.ru/">
 					Начать обучение
 				</Button>
-				<p className={styles.note}>*Цена зафиксирована только для beta-доступа до сентября 2024 г.</p>
 			</div>
 			<div className={styles.body}>
 				<div className={styles.anim}>

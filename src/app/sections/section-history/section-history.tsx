@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styles from './section-history.module.css';
 
 export function SectionHistory() {
@@ -26,9 +25,6 @@ export function SectionHistory() {
 					<li>более 50 платформ предлагают различные способы монетизации контента</li>
 					<li>бренды, компании, артисты и политики общаются с аудиторией с помощью блогов</li>
 				</ul>
-				<Link className={styles.link} href="#">
-					Подробнее в видео
-				</Link>
 			</div>
 			<div className={styles.foot}>
 				<div className={styles.card}>

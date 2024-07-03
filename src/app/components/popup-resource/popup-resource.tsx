@@ -1,13 +1,30 @@
-import { Button } from '@/app/ui/button/button';
-import styles from './popup-resource.module.css';
+'use client';
+
 import Image from 'next/image';
+import { Button } from '@/app/ui/button/button';
+import { motion } from 'framer-motion';
+import styles from './popup-resource.module.css';
 
-export function PopupPesource({ isOpend }: { isOpend: boolean }) {
-	if (!isOpend) return;
-
+export function PopupPesource({ isOpend, onClose }: { isOpend: boolean; onClose: () => void }) {
 	return (
-		<div className={styles.over}>
+		<motion.div
+			initial={{
+				backgroundColor: 'rgba(0,0,0,0)',
+				visibility: 'hidden',
+				opacity: 0,
+			}}
+			animate={{
+				backgroundColor: isOpend ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0)',
+				visibility: isOpend ? 'visible' : 'hidden',
+				opacity: isOpend ? 1 : 0,
+			}}
+			className={styles.over}
+		>
 			<div className={styles.wrap}>
+				<button className={styles.close} onClick={onClose}>
+					<span></span>
+					<span></span>
+				</button>
 				<div className={styles.body}>
 					<div className={styles.grid}>
 						<div className={styles.item}>
@@ -146,6 +163,6 @@ export function PopupPesource({ isOpend }: { isOpend: boolean }) {
 					</Button>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 }

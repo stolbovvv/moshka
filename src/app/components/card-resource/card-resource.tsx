@@ -4,8 +4,10 @@ import styles from './card-resource.module.css';
 
 export function CardResource({
 	data: { title, thumb, author, duration, complexity, tags, price, category },
+	openModal,
 }: {
 	data: Resource;
+	openModal: () => void;
 }) {
 	return (
 		<div className={styles.wrap}>
@@ -34,7 +36,9 @@ export function CardResource({
 				<span className={styles.price__value}>{price} ₽</span>
 			</div>
 			<div className={styles.foot}>
-				<button className={styles.more}>Подробнее</button>
+				<button className={styles.more} onClick={openModal}>
+					Подробнее
+				</button>
 				<p className={styles.type}>{category.name}</p>
 			</div>
 		</div>
