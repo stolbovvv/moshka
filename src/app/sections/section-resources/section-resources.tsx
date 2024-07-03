@@ -107,7 +107,7 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 								notDot={true}
 								onClick={() => setCount((count) => count + step)}
 							>
-								Показать еще {step}
+								Показать еще {filtered.length - count > step ? step : filtered.length - count}
 							</Button>
 						)}
 						{count !== step && (
