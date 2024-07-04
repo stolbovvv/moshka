@@ -29,7 +29,7 @@ export function PopupOut() {
 
 		const scroll = () => {
 			if (window.scrollY / height > 0.95) scrollToDown.current = true;
-			if (window.scrollY / height < 0.15 && scrollToDown.current) {
+			if (window.scrollY / height < 0.05 && scrollToDown.current) {
 				setOpen(true);
 				clearTimeout(timeout.current);
 				window.removeEventListener('scroll', scroll);
