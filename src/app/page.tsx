@@ -10,6 +10,7 @@ import { SectionHero } from '@/app/sections/section-hero/section-hero';
 import { SectionReviews } from '@/app/sections/section-reviews/section-reviews';
 import { SectionFaq } from '@/app/sections/section-faq/section-faq';
 import { SectionForWhom } from '@/app/sections/section-for-whom/section-for-whom';
+import { PopupOut } from '@/app/components/popup-out/popup-out';
 
 export default async function Home() {
 	const resources = await fetchResources();
@@ -29,6 +30,7 @@ export default async function Home() {
 			<SectionGallery />
 			{reviews && <SectionReviews reviews={reviews} />}
 			{faqs && <SectionFaq faqs={faqs} />}
+			<PopupOut />
 		</main>
 	);
 }

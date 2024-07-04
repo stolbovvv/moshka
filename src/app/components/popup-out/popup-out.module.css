@@ -1,0 +1,115 @@
+.over {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	inset: 0;
+	padding: 1.25rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	overflow: hidden auto;
+	backdrop-filter: blur(10px);
+}
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	padding: 2.5rem;
+	width: min(59.4375rem, 100%);
+	border-radius: var(--radius-lg);
+	background: var(--clr-blue-1) url("./popap-image.png") right center / auto 100% no-repeat;
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	justify-content: space-between;
+}
+
+.heading {
+	margin: 0;
+	font-family: var(--ff-accent);
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.close {
+	position: relative;
+	width: 2rem;
+	height: 2rem;
+	border: none;
+	border-radius: 50%;
+	padding: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(10px);
+	cursor: pointer;
+}
+
+.close > span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: var(--clr-neutral-1);
+	transform: translate(-50%, -50%) rotate(45deg);
+	border-radius: 99rem;
+}
+
+.close > span:nth-child(1) {
+	width: 0.125rem;
+	height: 80%;
+}
+
+.close > span:nth-child(2) {
+	height: 0.125rem;
+	width: 80%;
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.25rem;
+	max-width: 70%;
+}
+
+.text {
+	margin: 0;
+}
+
+.lable {
+	margin: 0;
+	padding: 0.75em 1.25em;
+	border-radius: var(--radius-lg);
+	background-color: var(--clr-blue-2);
+	font-family: var(--ff-accent);
+	font-weight: 600;
+	max-width: 23rem;
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.list > li + li {
+	margin-top: 0.75em;
+}
+
+@media screen and (width < 48em) {
+	.wrap {
+		background: var(--clr-blue-1);
+		padding: 1.25rem;
+	}
+}
+
+@media screen and (width < 42em) {
+	.wrap {
+		background: var(--clr-blue-1);
+	}
+	.body {
+		max-width: 100%;
+	}
+}

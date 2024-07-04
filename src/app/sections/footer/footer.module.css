@@ -99,6 +99,17 @@
 	opacity: 0.5;
 }
 
+.foot__col {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.foot__col .link {
+	margin-top: auto;
+	margin-left: auto;
+}
+
 @media screen and (width < 80em) {
 	.menu {
 		gap: 0.625rem 1.15rem;
@@ -135,5 +146,9 @@
 @media screen and (width < 48em) {
 	.menu {
 		display: none;
+	}
+
+	.foot__col .link {
+		margin-right: auto;
 	}
 }

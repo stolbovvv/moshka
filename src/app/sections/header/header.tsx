@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/app/ui/button/button';
 import styles from './header.module.css';
 
@@ -19,13 +20,33 @@ const navigation = [
 
 export function Header() {
 	const [open, setOpen] = useState(false);
+	const [visibleHeader, setVisibleHeader] = useState<boolean>(true);
+	const [scrolledHeader, setScrolledHeader] = useState<boolean>(false);
+	const { scrollY } = useScroll();
+
+	const headerRef = useRef<any>(null);
+	const lastScrolPosition = useRef<number>(0);
+
+	useMotionValueEvent(scrollY, 'change', (latest) => {
+		setVisibleHeader(latest > lastScrolPosition.current && headerRef.current.offsetHeight < latest && !open);
+		setScrolledHeader(headerRef.current.offsetHeight < latest);
+
+		lastScrolPosition.current = latest;
+	});
 
 	useEffect(() => {
 		document.body.style.overflow = open ? 'hidden' : 'auto';
 	}, [open]);
 
 	return (
-		<header className={styles.wrap}>
+		<motion.header
+			ref={headerRef}
+			animate={{
+				y: visibleHeader && scrolledHeader ? 'calc(-100% - 2.5rem)' : '0',
+				boxShadow: scrolledHeader ? '0 0.75rem 1.25rem rgba(0,0,0,0.5)' : '0 0.75rem 1.25rem rgba(0,0,0,0.0)',
+			}}
+			className={styles.wrap}
+		>
 			<Link className={styles.logo} href="/">
 				<Image
 					className={styles.logo__icon}
@@ -55,6 +76,6 @@ export function Header() {
 					Личный кабинет
 				</Button>
 			</nav>
-		</header>
+		</motion.header>
 	);
 }

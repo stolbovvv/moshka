@@ -1,7 +1,8 @@
 'use client';
 
-import type { Resource, ResourceCategory } from '@/lib/definitions';
+import type { Resource } from '@/lib/definitions';
 import { useEffect, useState } from 'react';
+import { LayoutGroup } from 'framer-motion';
 import clsx from 'clsx';
 import { Button } from '@/app/ui/button/button';
 import { CardResource } from '@/app/components/card-resource/card-resource';
@@ -14,8 +15,9 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 	const [mobile, setMobile] = useState<MediaQueryList>();
 	const [tablet, setTablet] = useState<MediaQueryList>();
 	const [filtered, setFiltered] = useState<Resource[]>(resources);
-	const [category, setCategory] = useState<ResourceCategory | null>({ id: 'all', name: '' });
+	const [category, setCategory] = useState<{ id: string; name: string }>({ id: 'all', name: '' });
 	const [modalOpened, setModalOpened] = useState<boolean>(false);
+	const [resource, setResource] = useState<Resource>();
 
 	const tabs = getUniqueCategories(resources);
 
@@ -24,10 +26,11 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 			setCategory({ id: 'all', name: '' });
 			setFiltered(resources);
 		} else {
-			const filtered = resources.filter((resource) => id === resource.category.id);
+			const filtered = resources.filter((resource) => id === resource.categoryId);
 			const category = tabs.filter((tab) => tab.id === id)[0] || null;
-			setCategory(category);
+
 			setFiltered(filtered);
+			setCategory(category);
 		}
 	};
 
@@ -91,12 +94,21 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 				</div>
 				<div className={styles.body}>
 					<div className={styles.grid}>
-						{filtered.map((data, index) => {
-							if (index < count)
-								return (
-									<CardResource key={data.id} data={data} openModal={() => setModalOpened(true)} />
-								);
-						})}
+						<LayoutGroup>
+							{filtered.map((data, index) => {
+								if (index < count)
+									return (
+										<CardResource
+											key={data.id}
+											data={data}
+											openModal={() => {
+												setResource(data);
+												setModalOpened(true);
+											}}
+										/>
+									);
+							})}
+						</LayoutGroup>
 					</div>
 
 					<div className={styles.buttons}>
@@ -123,18 +135,18 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 				</div>
 			</section>
 
-			<PopupPesource isOpend={modalOpened} onClose={() => setModalOpened(false)} />
+			<PopupPesource isOpend={modalOpened} resource={resource} onClose={() => setModalOpened(false)} />
 		</>
 	);
 }
 
-function getUniqueCategories(resources: Resource[]): ResourceCategory[] {
-	const uniqueCategories: { [key: string]: ResourceCategory } = {};
+function getUniqueCategories(resources: Resource[]): { id: string; name: string }[] {
+	const uniqueCategories: { [key: string]: { id: string; name: string } } = {};
 
 	resources.forEach((resource) => {
-		const categoryKey = resource.category.id;
+		const categoryKey = resource.categoryId;
 		if (!uniqueCategories[categoryKey]) {
-			uniqueCategories[categoryKey] = resource.category;
+			uniqueCategories[categoryKey] = { id: resource.categoryId, name: resource.categoryName };
 		}
 	});
 

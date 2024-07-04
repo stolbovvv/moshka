@@ -38,13 +38,13 @@ const variants = {
 	},
 };
 
-export function CardFaq({ data: { question, answer } }: { data: Faq }) {
-	const [open, setOpen] = useState(false);
+export function CardFaq({ data: { question, answer }, opened }: { data: Faq; opened: boolean }) {
+	const [open, setOpen] = useState(opened);
 
 	return (
 		<motion.div
 			className={styles.wrap}
-			initial={'hide'}
+			initial={open ? 'open' : 'hide'}
 			animate={open ? 'open' : 'hide'}
 			variants={variants.wrapper}
 		>
@@ -54,7 +54,7 @@ export function CardFaq({ data: { question, answer } }: { data: Faq }) {
 				</h3>
 				<motion.button
 					className={styles.button}
-					initial={'hide'}
+					initial={open ? 'open' : 'hide'}
 					animate={open ? 'open' : 'hide'}
 					variants={variants.trigger}
 					onClick={() => setOpen(!open)}
@@ -65,7 +65,7 @@ export function CardFaq({ data: { question, answer } }: { data: Faq }) {
 			</div>
 			<motion.div
 				className={styles.body}
-				initial={'hide'}
+				initial={open ? 'open' : 'hide'}
 				animate={open ? 'open' : 'hide'}
 				variants={variants.content}
 			>

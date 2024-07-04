@@ -66,7 +66,7 @@ export function Footer() {
 					<Link className={styles.link} href="/offerta">
 						Договор офферты
 					</Link>
-					<Link className={styles.link} href="/consent">
+					<Link className={styles.link} href="/agreement">
 						Согласие на обработку персональных данных
 					</Link>
 				</div>
@@ -75,9 +75,20 @@ export function Footer() {
 				</p>
 			</div>
 			<div className={styles.foot}>
-				<p className={styles.text}>№ Л035-01298-77/01082986</p>
-				<p className={styles.text}>Название выдавшего органа: ДЕПАРТАМЕНТ ОБРАЗОВАНИЯ И НАУКИ ГОРОДА МОСКВЫ.</p>
-				<p className={styles.text}>Дата выдачи: 05.03.2024</p>
+				<div className={styles.row}>
+					<div className={styles.foot__col}>
+						<p className={styles.text}>№ Л035-01298-77/01082986</p>
+						<p className={styles.text}>
+							Название выдавшего органа: ДЕПАРТАМЕНТ ОБРАЗОВАНИЯ И НАУКИ ГОРОДА МОСКВЫ.
+						</p>
+						<p className={styles.text}>Дата выдачи: 05.03.2024</p>
+					</div>
+					<div className={styles.foot__col}>
+						<Link className={styles.link} href="https://goweb.pro/">
+							Made by GoWeb.Pro
+						</Link>
+					</div>
+				</div>
 			</div>
 		</footer>
 	);

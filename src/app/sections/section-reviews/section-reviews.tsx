@@ -7,12 +7,18 @@ import IconArrowLeft from '@/assets/icons/arrow-left.svg';
 import IconArrowRight from '@/assets/icons/arrow-right.svg';
 import { CardReview } from '@/app/components/card-review/card-review';
 import styles from './section-reviews.module.css';
+import { Autoplay } from 'swiper/modules';
 
 const swiperOptions: SwiperProps = {
 	slidesPerView: 1,
 	spaceBetween: '20rem',
 	loop: true,
 	speed: 500,
+	autoplay: {
+		delay: 3000,
+		pauseOnMouseEnter: true,
+	},
+	modules: [Autoplay],
 	breakpoints: {
 		'1024': {
 			slidesPerView: 2,

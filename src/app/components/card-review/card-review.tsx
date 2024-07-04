@@ -1,8 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './card-review.module.css';
 import { Review } from '@/lib/definitions';
+import { useState } from 'react';
 
 export function CardReview({ data: { name, info, photo, content } }: { data: Review }) {
+	const [isFull, setIsFull] = useState<boolean>(false);
+
 	return (
 		<div className={styles.wrap}>
 			<div className={styles.head}>
@@ -13,8 +18,11 @@ export function CardReview({ data: { name, info, photo, content } }: { data: Rev
 				<p className={styles.info}>{info}</p>
 			</div>
 			<div className={styles.body}>
-				<p>{content}</p>
+				<p>{isFull ? content : `${content.slice(0, 280).trim()}...`}</p>
 			</div>
+			<button className={styles.button} onClick={() => setIsFull((isFull) => !isFull)}>
+				{isFull ? 'Скрыть' : 'Раскрыть'}
+			</button>
 		</div>
 	);
 }

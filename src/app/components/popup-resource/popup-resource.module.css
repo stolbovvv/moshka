@@ -230,3 +230,10 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+@media screen and (width < 36em) {
+	.author__image {
+		width: 100%;
+		aspect-ratio: 1/1;
+	}
+}

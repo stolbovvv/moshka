@@ -92,3 +92,58 @@ picture {
 		font-size: 0.875rem;
 	}
 }
+
+.article {
+	padding: 2.5rem;
+	border-radius: var(--radius-lg);
+	background-color: var(--clr-blue-1);
+}
+
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+	font-family: var(--ff-accent);
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.article a {
+	color: var(--clr-blue-3);
+}
+
+.breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.625rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.breadcrumbs > li + li::before {
+	content: "/";
+	margin-right: 0.5em;
+}
+
+.breadcrumbs > li > a {
+	color: inherit;
+	opacity: 0.5;
+	text-decoration: none;
+}
+
+.breadcrumbs > li > a:hover {
+	color: inherit;
+	opacity: 1;
+	text-decoration: none;
+	transition: all var(--transition-sm);
+}
+
+@media screen and (width < 80em) {
+	.article {
+		padding: 1.25em;
+	}
+}

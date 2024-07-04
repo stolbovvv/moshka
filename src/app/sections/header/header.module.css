@@ -6,6 +6,9 @@
 	border-radius: 3.75rem;
 	background-color: var(--clr-neutral-3);
 	color: var(--clr-neutral-1);
+	position: sticky;
+	top: 1.25rem;
+	z-index: 100;
 }
 
 .logo {
@@ -66,6 +69,7 @@
 @media screen and (width < 70em) {
 	.wrap {
 		position: relative;
+		position: sticky;
 	}
 
 	.burger {
@@ -142,6 +146,8 @@
 		padding: 0.625rem;
 		border-radius: var(--radius-lg);
 		z-index: 100;
+		position: sticky;
+		top: 0.625rem;
 	}
 
 	.logo {
@@ -165,8 +171,12 @@
 	}
 
 	.menu {
-		position: fixed;
-		inset: 0.625rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - 1.25rem);
+
 		flex-direction: column;
 		gap: 1.875rem;
 		padding-top: 6.25rem;

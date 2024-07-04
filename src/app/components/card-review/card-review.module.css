@@ -49,6 +49,18 @@
 	margin-bottom: 0;
 }
 
+.button {
+	margin: auto 0 0 0;
+	padding: 0.5em 0.75em;
+	border: none;
+	align-self: flex-end;
+	border-radius: 999rem;
+	background: var(--clr-dark-3);
+	font-size: 0.875rem;
+	color: inherit;
+	cursor: pointer;
+}
+
 @media screen and (width < 80em) {
 	.user__name {
 		font-size: 1.125rem;
