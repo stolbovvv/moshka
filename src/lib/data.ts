@@ -8,7 +8,8 @@ export async function fetchResources(): Promise<Resource[] | undefined> {
 
 		return await data.json();
 	} catch (error) {
-		console.error(`ERROR: Failed to fetch resource data. ${error}`);
+		// console.error(`ERROR: Failed to fetch resource data. ${error}`);
+		return;
 	}
 }
 
@@ -20,7 +21,8 @@ export async function fetchReviews(): Promise<Review[] | undefined> {
 
 		return await data.json();
 	} catch (error) {
-		console.error(`ERROR: Failed to fetch reviews data. ${error}`);
+		// console.error(`ERROR: Failed to fetch reviews data. ${error}`);
+		return;
 	}
 }
 
@@ -32,6 +34,7 @@ export async function fetchFaqs(): Promise<Faq[] | undefined> {
 
 		return await data.json();
 	} catch (error) {
-		console.error(`ERROR: Failed to fetch FAQ data. ${error}`);
+		// console.error(`ERROR: Failed to fetch FAQ data. ${error}`);
+		return;
 	}
 }
