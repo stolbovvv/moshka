@@ -1,22 +1,45 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/app/ui/button/button';
 import styles from './popup-out.module.css';
 
 export function PopupOut() {
 	const [open, setOpen] = useState(false);
-
-	useEffect(() => {
-		const timer = setTimeout(() => setOpen(true), 20000);
-
-		return () => clearTimeout(timer);
-	}, []);
+	const [wasOpen, setWasOpen] = useState(false);
+	const timeout = useRef<any>();
+	const scrollToDown = useRef<boolean>(false);
 
 	useEffect(() => {
 		document.body.style.overflow = open ? 'hidden' : 'auto';
 	}, [open]);
+
+	useEffect(() => {
+		timeout.current = setTimeout(() => {
+			setOpen(true);
+			setWasOpen(true);
+		}, 30000);
+
+		return () => clearTimeout(timeout.current);
+	}, []);
+
+	useEffect(() => {
+		const height = document.documentElement.scrollHeight;
+
+		const scroll = () => {
+			if (window.scrollY / height > 0.95) scrollToDown.current = true;
+			if (window.scrollY / height < 0.15 && scrollToDown.current) {
+				setOpen(true);
+				clearTimeout(timeout.current);
+				window.removeEventListener('scroll', scroll);
+			}
+		};
+
+		if (!wasOpen) window.addEventListener('scroll', scroll);
+
+		return () => window.removeEventListener('scroll', scroll);
+	}, [wasOpen]);
 
 	return (
 		<motion.div

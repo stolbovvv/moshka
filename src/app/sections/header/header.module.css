@@ -176,6 +176,7 @@
 		left: 0;
 		width: 100%;
 		height: calc(100vh - 1.25rem);
+		height: calc(100dvh - 1.25rem);
 
 		flex-direction: column;
 		gap: 1.875rem;
