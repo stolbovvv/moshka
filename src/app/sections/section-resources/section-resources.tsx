@@ -1,7 +1,7 @@
 'use client';
 
 import type { Resource } from '@/lib/definitions';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { LayoutGroup } from 'framer-motion';
 import clsx from 'clsx';
 import { Button } from '@/app/ui/button/button';
@@ -19,6 +19,7 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 	const [modalOpened, setModalOpened] = useState<boolean>(false);
 	const [resource, setResource] = useState<Resource>();
 
+	const wrap = useRef(null);
 	const tabs = getUniqueCategories(resources);
 
 	const changeCategory = (id: string) => {
@@ -39,17 +40,14 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 		setMobile(window.matchMedia('(max-width: 47.999em)'));
 
 		function cangeStap() {
-			if (mobile?.matches) return setStep(2);
-			if (tablet?.matches) return setStep(4);
-			setStep(6);
+			if (mobile?.matches) return setStep(6);
+			setStep(10);
 		}
 
 		if (mobile?.matches) {
-			setCount(2);
-		} else if (tablet?.matches) {
-			setCount(4);
-		} else {
 			setCount(6);
+		} else {
+			setCount(10);
 		}
 
 		cangeStap();
@@ -64,7 +62,7 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 
 	return (
 		<>
-			<section className={styles.wrap} id="section-resources">
+			<section className={styles.wrap} id="section-resources" ref={wrap}>
 				<div className={styles.head}>
 					<h2 className={styles.heading}>
 						Что входит <br />в подписку?

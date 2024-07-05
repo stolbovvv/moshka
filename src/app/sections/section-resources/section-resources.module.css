@@ -73,7 +73,7 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
 	gap: 1.25rem;
 }
 
@@ -87,6 +87,11 @@
 	.wrap {
 		padding: 1.25rem;
 		gap: 1.25rem;
+	}
+
+	.grid {
+		gap: 0.625rem;
+		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	}
 
 	.heading {
@@ -103,10 +108,6 @@
 
 	.body {
 		gap: 1.25rem;
-	}
-
-	.grid {
-		gap: 0.625rem;
 	}
 
 	.buttons {
@@ -127,7 +128,13 @@
 	}
 
 	.grid {
-		grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+	}
+}
+
+@media screen and (width < 36em) {
+	.grid {
+		grid-template-columns: 1fr;
 	}
 }
 

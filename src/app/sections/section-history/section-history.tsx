@@ -8,10 +8,11 @@ export function SectionHistory() {
 					className={styles.video}
 					width={720}
 					height={405}
-					loop
-					autoPlay
-					preload="none"
-					muted
+					preload="auto"
+					loop={true}
+					muted={true}
+					autoPlay={true}
+					playsInline={true}
 					poster="/images/media-placeholder.jpg"
 				>
 					<source src="/video/promo-video.mp4" type="video/mp4" />

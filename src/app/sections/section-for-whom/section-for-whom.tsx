@@ -3,10 +3,8 @@
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useState } from 'react';
-import { Swiper, SwiperProps, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
-import IconArrowLeft from '@/assets/icons/arrow-left.svg';
-import IconArrowRight from '@/assets/icons/arrow-right.svg';
 import image1 from './image-1.png';
 import image2 from './image-2.png';
 import styles from './section-for-whom.module.css';
@@ -111,7 +109,6 @@ export function SectionForWhom() {
 					Кому будет <br />
 					полезно?
 				</h2>
-				<Slider />
 				<Cards current={picture} />
 			</div>
 		</section>
@@ -133,38 +130,6 @@ function Cards({ current }: { current: number }) {
 					<div className={styles.card__content}>{card.content}</div>
 				</div>
 			))}
-		</div>
-	);
-}
-
-function Slider() {
-	return (
-		<Swiper className={styles.slider} wrapperClass={styles.slider__wrapper} loop={true} speed={1000}>
-			{cards.map((card, index) => (
-				<SwiperSlide key={index} className={styles.slider__slide}>
-					<div key={index} className={styles.card} data-theme={card.theme}>
-						<h3 className={styles.card__heading}>{card.title}</h3>
-						<div className={styles.card__content}>{card.content}</div>
-					</div>
-				</SwiperSlide>
-			))}
-
-			<SwipertNavigation />
-		</Swiper>
-	);
-}
-
-function SwipertNavigation() {
-	const swiper = useSwiper();
-
-	return (
-		<div className={styles.slider__navbar}>
-			<button className={styles.slider__button} onClick={() => swiper.slidePrev()}>
-				<Image src={IconArrowLeft} alt="" />
-			</button>
-			<button className={styles.slider__button} onClick={() => swiper.slideNext()}>
-				<Image src={IconArrowRight} alt="" />
-			</button>
 		</div>
 	);
 }

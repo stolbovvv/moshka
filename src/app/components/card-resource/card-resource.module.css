@@ -21,6 +21,7 @@
 	margin: 0;
 	font-size: 1.5rem;
 	font-weight: 500;
+	line-height: 1.2;
 }
 
 .author {
@@ -123,11 +124,13 @@
 	color: var(--clr-neutral-1);
 }
 
-@media screen and (width < 64em) {
+@media screen and (width < 80em) {
 	.wrap {
 		padding: 0.625rem;
 	}
+}
 
+@media screen and (width < 64em) {
 	.heading {
 		font-size: 1.125rem;
 	}
@@ -146,5 +149,12 @@
 
 	.type {
 		font-size: 0.875rem;
+	}
+}
+
+@media screen and (width < 48em) {
+	.type,
+	.tag {
+		padding: 0.25em 0.5em;
 	}
 }

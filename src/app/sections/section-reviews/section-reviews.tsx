@@ -15,7 +15,7 @@ const swiperOptions: SwiperProps = {
 	loop: true,
 	speed: 500,
 	autoplay: {
-		delay: 3000,
+		delay: 10000,
 		pauseOnMouseEnter: true,
 	},
 	modules: [Autoplay],
