@@ -32,7 +32,7 @@ export function SectionReviews({ reviews }: { reviews: Review[] }) {
 			<div className={styles.head}>
 				<h2 className={styles.heading}>
 					Следующий отзыв <br />
-					может быть Вашим 
+					может быть Вашим
 				</h2>
 			</div>
 			<div className={styles.body}>
