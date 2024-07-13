@@ -19,6 +19,7 @@ export type Resource = {
 	posters: string[];
 	categoryId: string;
 	categoryName: string;
+	head_description: string;
 };
 
 export type Review = {

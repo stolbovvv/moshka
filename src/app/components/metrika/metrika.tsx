@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Script from "next/script";
+import Script from 'next/script';
 
 export function Metrika() {
-  return (
-    <>
-      <Script id="yandex-metrika">
-        {`
+	return (
+		<>
+			<Script id="yandex-metrika">
+				{`
           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
           m[i].l=1*new Date();
           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -18,18 +18,18 @@ export function Metrika() {
               trackLinks:true,
               accurateTrackBounce:true,
               webvisor:true
-          });    
+          });
         `}
-      </Script>
-      <noscript>
-        <div>
-          <img
-            src="https://mc.yandex.ru/watch/97817749"
-            style={{ position: 'absolute', left: '-9999px' }}
-            alt=""
-          />
-        </div>
-      </noscript>
-    </>
-  );
+			</Script>
+			<noscript>
+				<div>
+					<img
+						src="https://mc.yandex.ru/watch/97817749"
+						style={{ position: 'absolute', left: '-9999px' }}
+						alt=""
+					/>
+				</div>
+			</noscript>
+		</>
+	);
 }

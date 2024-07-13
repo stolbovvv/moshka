@@ -33,8 +33,17 @@ export function CardResource({
 				))}
 			</ul>
 			<div className={styles.price}>
-				<span className={styles.price__label}>Цена без подписки</span>
-				<span className={styles.price__value}>{price}</span>
+				{price === '0' ? (
+					<>
+						<span className={styles.price__label}>Достпно только в годовой подписке</span>
+						<span className={styles.price__value}></span>
+					</>
+				) : (
+					<>
+						<span className={styles.price__label}>Цена без подписки</span>
+						<span className={styles.price__value}>{price}</span>
+					</>
+				)}
 			</div>
 			<div className={styles.foot}>
 				<button className={styles.more} onClick={openModal}>

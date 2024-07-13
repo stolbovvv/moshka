@@ -56,15 +56,17 @@
 }
 
 .grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+	flex-wrap: wrap;
 	gap: 2.5rem;
 }
 
 .item {
+	flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;
+	width: calc(50% - 1.25rem);
 }
 
 .heading {
@@ -168,6 +170,7 @@
 .images {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
 	gap: 1.25rem;
 }
 
@@ -180,9 +183,18 @@
 	object-position: center;
 }
 
+.button {
+	position: sticky;
+	bottom: 0;
+}
+
 @media screen and (width < 80em) {
 	.grid {
-		grid-template-columns: 1fr;
+		flex-direction: column;
+	}
+
+	.item {
+		width: 100%;
 	}
 
 	.author {
@@ -190,7 +202,7 @@
 	}
 
 	.images {
-		grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
 		gap: 0.625rem;
 	}
 }

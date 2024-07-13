@@ -3,6 +3,7 @@
 import type { Faq } from '@/lib/definitions';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import sanitizeHtml from 'sanitize-html';
 import styles from './card-faq.module.css';
 
 const variants = {
@@ -69,7 +70,7 @@ export function CardFaq({ data: { question, answer }, opened }: { data: Faq; ope
 				animate={open ? 'open' : 'hide'}
 				variants={variants.content}
 			>
-				<div className={styles.content}>{answer}</div>
+				<div className={styles.content} dangerouslySetInnerHTML={{ __html: sanitizeHtml(answer) }} />
 			</motion.div>
 		</motion.div>
 	);

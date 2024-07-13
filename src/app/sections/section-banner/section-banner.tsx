@@ -22,6 +22,7 @@ const cards = [
 export function SectionBanner() {
 	return (
 		<section className={styles.wrap} id="section-banner">
+			<h2 className={styles.label}>Добро пожаловать в будущее вместе с нами</h2>
 			<div className={styles.head}>
 				<ul className={styles.list}>
 					<li className={styles.stick} data-item="1">
@@ -63,7 +64,7 @@ export function SectionBanner() {
 			<div className={styles.body}>
 				{cards.map(({ theme, heading, content }, index) => (
 					<div key={index} className={styles.card} data-theme={theme}>
-						<h2 className={styles.card__header}>{heading}</h2>
+						<h3 className={styles.card__header}>{heading}</h3>
 						<p className={styles.card__text}>{content}</p>
 					</div>
 				))}

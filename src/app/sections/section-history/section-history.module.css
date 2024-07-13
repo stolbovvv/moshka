@@ -88,6 +88,14 @@
 	padding-left: 1.25em;
 }
 
+.card__item_mark {
+	font-weight: 700;
+}
+
+.card__item_mark::marker {
+	color: var(--clr-red-1);
+}
+
 @media screen and (width < 80em) {
 	.wrap {
 		gap: 1.25rem;

@@ -41,7 +41,7 @@ export function SectionHistory() {
 					<ul className={styles.card__list}>
 						<li>получить доступ к аудитории никогда не было так просто и легко</li>
 						<li>достаточно телефона, который лежит в твоём кармане</li>
-						<li>каждый может рассказать свою историю</li>
+						<li className={styles.card__item_mark}>каждый может рассказать свою историю</li>
 					</ul>
 				</div>
 			</div>
