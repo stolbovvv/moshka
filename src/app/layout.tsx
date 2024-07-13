@@ -8,6 +8,8 @@ import '@/assets/styles/helper.css';
 import { sffont, unbounded } from '@/assets/fonts';
 import { Footer } from '@/app/sections/footer/footer';
 import { Header } from '@/app/sections/header/header';
+import { Suspense } from "react";
+import { Metrika } from '@/app/components/metrika/metrika';
 
 export const metadata: Metadata = {
 	title: 'Moshka',
@@ -38,6 +40,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 	return (
 		<html lang="ru" className={unbounded.variable}>
 			<body className={sffont.className}>
+				<Suspense>
+					<Metrika />
+				</Suspense>
 				<div className="wrapper">
 					<Header />
 					{children}

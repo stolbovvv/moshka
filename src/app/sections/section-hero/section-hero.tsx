@@ -10,8 +10,8 @@ export function SectionHero() {
 					Научись <span className="fw-700">рассказывать</span> свои истории, как <br />
 					в кино
 				</h1>
-				<p className={styles.text}>Получи опыт мастеров кино, сторителлинга, блогинга и мобильной съёмки</p>
-				<Button className={styles.button} href="https://getcourse.ru/">
+				<p className={styles.text}>Получи опыт мастеров кино, сторителлинга, блогинга и мобильной съёмки в виде удобных курсов в годовой подписке MOSHKA</p>
+				<Button className={styles.button} href="#section-profit">
 					Начать обучение
 				</Button>
 			</div>

@@ -31,8 +31,8 @@ export function SectionReviews({ reviews }: { reviews: Review[] }) {
 		<section className={styles.wrap} id="section-reviews">
 			<div className={styles.head}>
 				<h2 className={styles.heading}>
-					Высокий рейтинг <br />
-					яндекс отзывов
+					Следующий отзыв <br />
+					может быть Вашим 
 				</h2>
 			</div>
 			<div className={styles.body}>

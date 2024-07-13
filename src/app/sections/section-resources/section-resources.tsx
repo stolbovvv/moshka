@@ -127,7 +127,7 @@ export function SectionResources({ resources }: { resources: Resource[] }) {
 						)}
 					</div>
 
-					<Button className={styles.button} href="https://getcourse.ru/">
+					<Button className={styles.button} href="#section-profit">
 						Получить все в подписке за 8900 ₽
 					</Button>
 				</div>

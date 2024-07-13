@@ -7,39 +7,33 @@ import styles from './popup-out.module.css';
 
 export function PopupOut() {
 	const [open, setOpen] = useState(false);
-	const [wasOpen, setWasOpen] = useState(false);
+	const wasOpen = useRef<boolean>(false);
 	const timeout = useRef<any>();
-	const scrollToDown = useRef<boolean>(false);
 
 	useEffect(() => {
 		document.body.style.overflow = open ? 'hidden' : 'auto';
 	}, [open]);
 
 	useEffect(() => {
-		timeout.current = setTimeout(() => {
-			setOpen(true);
-			setWasOpen(true);
-		}, 30000);
-
-		return () => clearTimeout(timeout.current);
-	}, []);
-
-	useEffect(() => {
-		const height = document.documentElement.scrollHeight;
-
-		const scroll = () => {
-			if (window.scrollY / height > 0.95) scrollToDown.current = true;
-			if (window.scrollY / height < 0.05 && scrollToDown.current) {
+		if (window.matchMedia('(max-width: 47.999em)').matches) {
+			timeout.current = setTimeout(() => {
 				setOpen(true);
-				clearTimeout(timeout.current);
-				window.removeEventListener('scroll', scroll);
-			}
-		};
+			}, 30000);
 
-		if (!wasOpen) window.addEventListener('scroll', scroll);
+			return () => clearTimeout(timeout.current);
+		} else {
+			const showPopupByOut = () => {
+				if (!wasOpen.current) {
+					setOpen(true);
+					wasOpen.current = true;
+				}
+			};
 
-		return () => window.removeEventListener('scroll', scroll);
-	}, [wasOpen]);
+			document.addEventListener('mouseleave', showPopupByOut);
+
+			return () => document.removeEventListener('mouseleave', showPopupByOut);
+		}
+	}, []);
 
 	return (
 		<motion.div
@@ -71,7 +65,7 @@ export function PopupOut() {
 						<li>- как вызывать эмоции и создать эпичность кадра</li>
 						<li>- приём монтажа из «Слово пацана» и «Звоните Ди Каприо»</li>
 					</ul>
-					<Button className={styles.button}>Забрать бесплатно</Button>
+					<Button href="https://salebot.site/md/61631aab25a54d8b4966639de060ad41" className={styles.button}>Забрать бесплатно</Button>
 				</div>
 			</motion.div>
 		</motion.div>

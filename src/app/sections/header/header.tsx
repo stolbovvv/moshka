@@ -9,7 +9,7 @@ import { Button } from '@/app/ui/button/button';
 import styles from './header.module.css';
 
 const navigation = [
-	{ href: '/#section-history', text: 'Чем полезна Moshka' },
+	{ href: '/#section-history', text: 'Чем полезна MOSHKA' },
 	{ href: '/#section-for-whom', text: 'Для кого' },
 	{ href: '/#section-banner', text: 'О проекте' },
 	{ href: '/#section-resources', text: 'Курсы' },
@@ -72,7 +72,7 @@ export function Header() {
 					))}
 				</ul>
 
-				<Button className={styles.menu__button} theme="transparent" href="https://getcourse.ru/">
+				<Button className={styles.menu__button} theme="transparent" href="https://lk.moshka.ru/">
 					Личный кабинет
 				</Button>
 			</nav>

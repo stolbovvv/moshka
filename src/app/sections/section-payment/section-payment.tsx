@@ -10,19 +10,10 @@ export function SectionPayment() {
 		<section className={styles.wrap} id="section-payment">
 			<div className={styles.head}>
 				<h2 className={styles.heading}>
-					Условия оплаты <br />и рассрочки
+					Учись сейчас, а плати потом <br />с рассрочкой от наших партнеров за 741 руб./мес
 				</h2>
 			</div>
 			<div className={styles.cards}>
-				<div className={styles.card} data-theme="blue">
-					<h3 className={styles.card__heading}>&gt; 4 способов оплаты</h3>
-					<div className={styles.card__images}>
-						<Image className={styles.card__image} src={imageBank1} alt="" />
-						<Image className={styles.card__image} src={imageBank2} alt="" />
-						<Image className={styles.card__image} src={imageBank3} alt="" />
-						<Image className={styles.card__image} src={imageBank4} alt="" />
-					</div>
-				</div>
 				<div className={styles.card} data-theme="yellow">
 					<h3 className={styles.card__heading}>Без переплат</h3>
 					<p className={styles.card__text}>Разделим стоимость на части — это не дороже, чем оплатить сразу</p>
@@ -30,6 +21,16 @@ export function SectionPayment() {
 				<div className={styles.card} data-theme="neutral">
 					<h3 className={styles.card__heading}>За 5 минут</h3>
 					<p className={styles.card__text}>Оформим рассрочку онлайн с подтверждением по СМС</p>
+				</div>
+				<div className={styles.card} data-theme="blue">
+					<h3 className={styles.card__heading}>&gt; 4 способов оплаты</h3>
+					<p className={styles.card__text}>Есть предложения от нескольких партнеров</p>
+					<div className={styles.card__images}>
+						<Image className={styles.card__image} src={imageBank1} alt="" />
+						<Image className={styles.card__image} src={imageBank2} alt="" />
+						<Image className={styles.card__image} src={imageBank3} alt="" />
+						<Image className={styles.card__image} src={imageBank4} alt="" />
+					</div>
 				</div>
 			</div>
 		</section>

@@ -1,10 +1,10 @@
 import type { Resource } from '@/lib/definitions';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import styles from './card-resource.module.css';
 
 export function CardResource({
 	data: { title = '', thumb = '', author, duration = '', complexity = '', tags = [], price = '', category = '' },
+	// data: { title = '', thumb = '', author, duration = '', complexity = '', tags = [], category = '' },
 	openModal,
 }: {
 	data: Resource;
@@ -12,7 +12,7 @@ export function CardResource({
 }) {
 	return (
 		<motion.div layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.wrap}>
-			<Image className={styles.thumb} src={thumb} alt={title} width={427} height={220} />
+			<img className={styles.thumb} src={thumb} alt={title} width={427} height={220} />
 			<h3 className={styles.heading}>{title}</h3>
 			<p className={styles.author}>{author?.name || ''}</p>
 			<ul className={styles.props}>
@@ -34,7 +34,7 @@ export function CardResource({
 			</ul>
 			<div className={styles.price}>
 				<span className={styles.price__label}>Цена без подписки</span>
-				<span className={styles.price__value}>{price} ₽</span>
+				<span className={styles.price__value}>{price}</span>
 			</div>
 			<div className={styles.foot}>
 				<button className={styles.more} onClick={openModal}>

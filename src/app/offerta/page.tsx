@@ -27,13 +27,13 @@ export default function Oferta() {
 						хранение и использование своих персональных данных на основании Федерального закона от
 						27.07.2006 № 152-ФЗ «О персональных данных» в целях и порядке, указанных в настоящем Согласии и
 						в соответствии с Политикой обработки персональных данных, расположенной по адресу{' '}
-						<a href="https://www.moshka.online">https://www.moshka.online</a>
+						<a href="https://moshka.ru">https://moshka.ru</a>
 					</p>
 
 					<p>
 						1. Субъект персональных данных (Заказчик) – лицо, направившее заявку на приобретение доступа к
 						информационным материалам через сеть Интернет на сайт{' '}
-						<a href="https://www.moshka.online">https://www.moshka.online</a>
+						<a href="https://moshka.ru">https://moshka.ru</a>
 					</p>
 
 					<p>
@@ -104,7 +104,7 @@ export default function Oferta() {
 
 					<p>
 						11. Настоящее Соглашение размещено на Сайте Оператора по ссылке:{' '}
-						<a href="https://www.moshka.online/agreement">https://www.moshka.online/agreement</a>
+						<a href="https://moshka.ru/agreement">https://moshka.ru/agreement</a>
 					</p>
 				</div>
 			</article>

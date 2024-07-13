@@ -7,7 +7,7 @@ import IconTelegram from '@/assets/icons/telegram.svg';
 import IconVkontakte from '@/assets/icons/vkontakte.svg';
 
 const navigation = [
-	{ href: '/#section-history', text: 'Чем полезна Moshka' },
+	{ href: '/#section-history', text: 'Чем полезна MOSHKA' },
 	{ href: '/#section-for-whom', text: 'Для кого' },
 	{ href: '/#section-banner', text: 'О проекте' },
 	{ href: '/#section-resources', text: 'Курсы' },
@@ -28,16 +28,16 @@ export function Footer() {
 					height={60}
 				/>
 				<div className={styles.social}>
-					<Link className={styles.social__link} href="#" target="_blank">
+					<Link className={styles.social__link} href="https://vk.com/moshka_ed" target="_blank">
 						<Image className={styles.social__icon} src={IconVkontakte} alt="" />
 					</Link>
-					<Link className={styles.social__link} href="#" target="_blank">
+					<Link className={styles.social__link} href="https://t.me/+FpT2KAqnp4k2ZDAy" target="_blank">
 						<Image className={styles.social__icon} src={IconTelegram} alt="" />
 					</Link>
-					<Link className={styles.social__link} href="#" target="_blank">
+					<Link className={styles.social__link} href="https://www.youtube.com/@MOSHKA_ED" target="_blank">
 						<Image className={styles.social__icon} src={IconYoutube} alt="" />
 					</Link>
-					<Link className={styles.social__link} href="#" target="_blank">
+					<Link className={styles.social__link} href="https://www.tiktok.com/@moshka_ed?is_from_webapp=1&sender_device=pc" target="_blank">
 						<Image className={styles.social__icon} src={IconDzen} alt="" />
 					</Link>
 				</div>
@@ -84,9 +84,9 @@ export function Footer() {
 						<p className={styles.text}>Дата выдачи: 05.03.2024</p>
 					</div>
 					<div className={styles.foot__col}>
-						<Link className={styles.link} href="https://goweb.pro/">
+						<p className={styles.link}>
 							Made by GoWeb.Pro
-						</Link>
+						</p>
 					</div>
 				</div>
 			</div>

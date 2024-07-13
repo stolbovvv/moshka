@@ -4,17 +4,17 @@ import styles from './section-banner.module.css';
 const cards = [
 	{
 		heading: 'В любой момент',
-		content: 'Все курсы в доступе в любой момент',
+		content: 'Все курсы в доступе 24/7',
 		theme: 'blue',
 	},
 	{
-		heading: 'Самопроверка',
-		content: 'Домашние задания для самопроверки',
+		heading: 'Общение',
+		content: 'Авторские вебинары и онлайн- встречи',
 		theme: 'neutral',
 	},
 	{
-		heading: 'Курс по подписке',
-		content: 'Авторские лонгриды и материалы',
+		heading: 'Курсы по подписке',
+		content: 'И новые материалы каждый месяц',
 		theme: 'yellow',
 	},
 ];
