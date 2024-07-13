@@ -23,6 +23,19 @@ export function SectionProfit() {
 				</p>
 			</div>
 			<div className={styles.body}>
+				<h3 className={styles.subtitle}>Сразу после подписки ты получишь:</h3>
+
+				<ul className={styles.roll}>
+					<li>44 часов видеоуроков</li>
+					<li>47 авторских лонгридов и материалов к урокам</li>
+					<li>32 домашних задания для самопроверки</li>
+					<li>10 курсов, мастер-классов и лекций</li>
+					<li>Регулярные обновления и новые курсы</li>
+					<li>Переводы эксклюзивных материалов</li>
+					<li>Закрытые мероприятия для подписчиков</li>
+					<li>Скидки и специальные предложения на другие продукты от наших авторов и партнеров</li>
+				</ul>
+
 				<ul className={styles.list}>
 					<li className={styles.item}>режиссура</li>
 					<li className={styles.item}>нейросети</li>

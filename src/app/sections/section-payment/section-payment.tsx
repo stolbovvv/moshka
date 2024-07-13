@@ -9,9 +9,8 @@ export function SectionPayment() {
 	return (
 		<section className={styles.wrap} id="section-payment">
 			<div className={styles.head}>
-				<h2 className={styles.heading}>
-					Учись сейчас, а плати потом <br />с рассрочкой от наших партнеров за 741 руб./мес
-				</h2>
+				<h2 className={styles.heading}>Учись сейчас, а плати потом</h2>
+				<h3 className={styles.subtitle}>с рассрочкой от наших партнеров за 741 руб./мес</h3>
 			</div>
 			<div className={styles.cards}>
 				<div className={styles.card} data-theme="yellow">
