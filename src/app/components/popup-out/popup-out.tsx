@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/app/ui/button/button';
+import image from './popap-image.png';
 import styles from './popup-out.module.css';
+import Image from 'next/image';
 
 export function PopupOut() {
 	const [open, setOpen] = useState(false);
@@ -51,7 +53,7 @@ export function PopupOut() {
 		>
 			<motion.div className={styles.wrap}>
 				<div className={styles.head}>
-					<h2 className={styles.heading}>Уже уходишь?</h2>
+					<h2 className={styles.heading}>Забрать подарок!</h2>
 					<button className={styles.close} onClick={() => setOpen(false)}>
 						<span></span>
 						<span></span>
@@ -65,8 +67,11 @@ export function PopupOut() {
 						<li>- как вызывать эмоции и создать эпичность кадра</li>
 						<li>- приём монтажа из «Слово пацана» и «Звоните Ди Каприо»</li>
 					</ul>
-					<Button href="https://salebot.site/md/61631aab25a54d8b4966639de060ad41" className={styles.button}>Забрать бесплатно</Button>
+					<Button href="https://salebot.site/md/61631aab25a54d8b4966639de060ad41" className={styles.button}>
+						Забрать бесплатно
+					</Button>
 				</div>
+				<Image className={styles.image} src={image} alt="" />
 			</motion.div>
 		</motion.div>
 	);
