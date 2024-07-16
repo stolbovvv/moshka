@@ -44,6 +44,16 @@ export function SectionHistory() {
 						<li className={styles.card__item_mark}>каждый может рассказать свою историю</li>
 					</ul>
 				</div>
+				<div className={styles.card}>
+					<h3 className={styles.card__heading}>Навыки создания контента – навыки будущего</h3>
+					<ul className={styles.card__list}>
+						<li>
+							Умение привлекать и вовлекать аудиторию = подписчики, популярность, деньги, самовыражение
+						</li>
+						<li>бизнес и бренды всегда охотятся за профессионалами в создании контента</li>
+						<li>Индустрия создателей контента оценивается в $250 млрд и достигнет $480 млрд в 2027</li>
+					</ul>
+				</div>
 			</div>
 		</section>
 	);

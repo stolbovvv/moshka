@@ -21,7 +21,7 @@ export function CardReview({ data: { name, info, photo, content } }: { data: Rev
 		return trimmedString;
 	};
 
-	const displayContent = isFull ? sanitizeHtml(content) : `${truncateHtml(sanitizeHtml(content), 280)}...`;
+	const displayContent = isFull ? sanitizeHtml(content) : `${truncateHtml(sanitizeHtml(content), 250)}...`;
 
 	return (
 		<div className={styles.wrap}>

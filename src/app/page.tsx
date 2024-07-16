@@ -25,9 +25,9 @@ export default async function Home() {
 			<SectionBanner />
 			<SectionForWhom />
 			{resources && <SectionResources resources={resources} />}
+			<SectionGallery />
 			<SectionProfit />
 			<SectionPayment />
-			<SectionGallery />
 			{reviews && <SectionReviews reviews={reviews} />}
 			{faqs && <SectionFaq faqs={faqs} />}
 			<PopupOut />

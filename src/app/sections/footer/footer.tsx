@@ -7,7 +7,7 @@ import IconTelegram from '@/assets/icons/telegram.svg';
 import IconVkontakte from '@/assets/icons/vkontakte.svg';
 
 const navigation = [
-	{ href: '/#section-history', text: 'Чем полезна MOSHKA' },
+	// { href: '/#section-history', text: 'Чем полезна MOSHKA' },
 	{ href: '/#section-for-whom', text: 'Для кого' },
 	{ href: '/#section-banner', text: 'О проекте' },
 	{ href: '/#section-resources', text: 'Курсы' },
@@ -34,7 +34,7 @@ export function Footer() {
 					<Link className={styles.social__link} href="https://t.me/+FpT2KAqnp4k2ZDAy" target="_blank">
 						<Image className={styles.social__icon} src={IconTelegram} alt="" />
 					</Link>
-					<Link className={styles.social__link} href="https://www.youtube.com/@MOSHKA_ED" target="_blank">
+					<Link className={styles.social__link} href="https://www.youtube.com/@MOSHKAed" target="_blank">
 						<Image className={styles.social__icon} src={IconYoutube} alt="" />
 					</Link>
 					<Link className={styles.social__link} href="https://www.tiktok.com/@moshka_ed?is_from_webapp=1&sender_device=pc" target="_blank">
@@ -64,7 +64,7 @@ export function Footer() {
 			<div className={styles.row}>
 				<div className={styles.links}>
 					<Link className={styles.link} href="/offerta">
-						Договор офферты
+						Договор оферты
 					</Link>
 					<Link className={styles.link} href="/agreement">
 						Согласие на обработку персональных данных

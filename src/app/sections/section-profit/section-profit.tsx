@@ -36,7 +36,7 @@ export function SectionProfit() {
 					<li>Скидки и специальные предложения на другие продукты от наших авторов и партнеров</li>
 				</ul>
 
-				<ul className={styles.list}>
+				{/* <ul className={styles.list}>
 					<li className={styles.item}>режиссура</li>
 					<li className={styles.item}>нейросети</li>
 					<li className={styles.item}>драматургия сериалов</li>
@@ -45,7 +45,7 @@ export function SectionProfit() {
 					<li className={styles.item}>визуальные образы</li>
 					<li className={styles.item}>вдохновение</li>
 					<li className={styles.item}>сторителлинг</li>
-				</ul>
+				</ul> */}
 				<div className={styles.price}>
 					<p className={styles.price__label}>Стоимость подписки</p>
 					<p className={clsx(styles.price__value, styles.price__value_old)}>18 900 ₽</p>

@@ -97,6 +97,8 @@
 .text {
 	margin: 0;
 	opacity: 0.5;
+	color: var(--clr-neutral-1);
+    text-decoration: none;
 }
 
 .foot__col {

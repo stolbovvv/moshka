@@ -9,7 +9,7 @@ import { Button } from '@/app/ui/button/button';
 import styles from './header.module.css';
 
 const navigation = [
-	{ href: '/#section-history', text: 'Чем полезна MOSHKA' },
+	// { href: '/#section-history', text: 'Чем полезна MOSHKA' },
 	{ href: '/#section-for-whom', text: 'Для кого' },
 	{ href: '/#section-banner', text: 'О проекте' },
 	{ href: '/#section-resources', text: 'Курсы' },

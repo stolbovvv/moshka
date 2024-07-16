@@ -35,7 +35,7 @@ export function CardResource({
 			<div className={styles.price}>
 				{price === '0' ? (
 					<>
-						<span className={styles.price__label}>Достпно только в годовой подписке</span>
+						<span className={styles.price__label}>Доступно только в годовой подписке</span>
 						<span className={styles.price__value}></span>
 					</>
 				) : (
