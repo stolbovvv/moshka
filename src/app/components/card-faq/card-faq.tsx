@@ -1,7 +1,6 @@
 'use client';
 
 import type { Faq } from '@/lib/definitions';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import sanitizeHtml from 'sanitize-html';
 import styles from './card-faq.module.css';
@@ -39,26 +38,32 @@ const variants = {
 	},
 };
 
-export function CardFaq({ data: { question, answer }, opened }: { data: Faq; opened: boolean }) {
-	const [open, setOpen] = useState(opened);
-
+export function CardFaq({
+	data: { question, answer },
+	opened,
+	onOpen,
+}: {
+	data: Faq;
+	opened: boolean;
+	onOpen: () => void;
+}) {
 	return (
 		<motion.div
 			className={styles.wrap}
-			initial={open ? 'open' : 'hide'}
-			animate={open ? 'open' : 'hide'}
+			initial={opened ? 'open' : 'hide'}
+			animate={opened ? 'open' : 'hide'}
 			variants={variants.wrapper}
 		>
 			<div className={styles.head}>
-				<h3 className={styles.heading} onClick={() => setOpen(!open)}>
+				<h3 className={styles.heading} onClick={() => onOpen()}>
 					{question}
 				</h3>
 				<motion.button
 					className={styles.button}
-					initial={open ? 'open' : 'hide'}
-					animate={open ? 'open' : 'hide'}
+					initial={opened ? 'open' : 'hide'}
+					animate={opened ? 'open' : 'hide'}
 					variants={variants.trigger}
-					onClick={() => setOpen(!open)}
+					onClick={() => onOpen()}
 				>
 					<span></span>
 					<span></span>
@@ -66,8 +71,8 @@ export function CardFaq({ data: { question, answer }, opened }: { data: Faq; ope
 			</div>
 			<motion.div
 				className={styles.body}
-				initial={open ? 'open' : 'hide'}
-				animate={open ? 'open' : 'hide'}
+				initial={opened ? 'open' : 'hide'}
+				animate={opened ? 'open' : 'hide'}
 				variants={variants.content}
 			>
 				<div className={styles.content} dangerouslySetInnerHTML={{ __html: sanitizeHtml(answer) }} />
