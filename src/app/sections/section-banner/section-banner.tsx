@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Marquee from 'react-fast-marquee';
+import decor from './section-banner-decor.svg';
 import styles from './section-banner.module.css';
 
 const cards = [
@@ -19,25 +21,23 @@ const cards = [
 	},
 ];
 
+const tags = [
+	'Мастер-классы',
+	'Cторителлинг',
+	'Лекции',
+	'Курсы',
+	'Практические навыки',
+	'Видео',
+	'Контент',
+	'Вдохновение',
+];
+
 export function SectionBanner() {
 	return (
 		<section className={styles.wrap} id="section-banner">
-			<h2 className={styles.label}>Добро пожаловать в будущее вместе с нами</h2>
+			<img className={styles.decor} src={decor.src} alt="" />
+			<h2 className={styles.heading}>Добро пожаловать в будущее вместе с нами</h2>
 			<div className={styles.head}>
-				<ul className={styles.list}>
-					<li className={styles.stick} data-item="1">
-						Мастер-классы
-					</li>
-					<li className={styles.stick} data-item="2">
-						Лекции
-					</li>
-					<li className={styles.stick} data-item="3">
-						Практические навыки
-					</li>
-					<li className={styles.stick} data-item="4">
-						Контент
-					</li>
-				</ul>
 				<Image
 					className={styles.image}
 					src="/images/moshka-black.svg"
@@ -45,22 +45,14 @@ export function SectionBanner() {
 					width={890}
 					height={382}
 				/>
-				<ul className={styles.list}>
-					<li className={styles.stick} data-item="5">
-						Cторителлинг
-					</li>
-					<li className={styles.stick} data-item="6">
-						Курсы
-					</li>
-					<li className={styles.stick} data-item="7">
-						Видео
-					</li>
-					<li className={styles.stick} data-item="8">
-						Вдохновение
-					</li>
-				</ul>
 			</div>
-
+			<Marquee className={styles.marquee} autoFill={true}>
+				{tags.map((tag, index) => (
+					<p key={index} className={styles.marquee__item}>
+						{tag}
+					</p>
+				))}
+			</Marquee>
 			<div className={styles.body}>
 				{cards.map(({ theme, heading, content }, index) => (
 					<div key={index} className={styles.card} data-theme={theme}>
