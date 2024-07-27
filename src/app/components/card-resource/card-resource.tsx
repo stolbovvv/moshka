@@ -4,7 +4,6 @@ import styles from './card-resource.module.css';
 
 export function CardResource({
 	data: { title = '', thumb = '', author, duration = '', complexity = '', tags = [], price = '', category = '' },
-	// data: { title = '', thumb = '', author, duration = '', complexity = '', tags = [], category = '' },
 	openModal,
 }: {
 	data: Resource;

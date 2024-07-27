@@ -6,7 +6,15 @@ import styles from './section-faq.module.css';
 import { useState } from 'react';
 
 export function SectionFaq({ faqs }: { faqs: Faq[] }) {
-	const [currentId, setCurrentId] = useState<number>(0);
+	const [currentId, setCurrentId] = useState<number | null>(0);
+
+	const handleClick = (index: number) => {
+		if (index === currentId) {
+			setCurrentId(null);
+		} else {
+			setCurrentId(index);
+		}
+	};
 
 	return (
 		<section className={styles.wrap} id="section-faq">
@@ -15,12 +23,7 @@ export function SectionFaq({ faqs }: { faqs: Faq[] }) {
 			</div>
 			<div className={styles.body}>
 				{faqs.map((data, index) => (
-					<CardFaq
-						key={data.id}
-						data={data}
-						opened={index === currentId}
-						onOpen={() => setCurrentId(index)}
-					/>
+					<CardFaq key={data.id} data={data} opened={index === currentId} onOpen={() => handleClick(index)} />
 				))}
 			</div>
 		</section>

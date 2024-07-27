@@ -78,12 +78,6 @@
 }
 
 @media screen and (width < 80em) {
-	.body {
-		height: min(65vw, 53.75rem);
-	}
-}
-
-@media screen and (width < 80em) {
 	.wrap {
 		padding: 1.25rem;
 		gap: 1.25rem;
@@ -91,6 +85,10 @@
 
 	.heading {
 		font-size: 1.875rem;
+	}
+
+	.body {
+		height: min(65vw, 53.75rem);
 	}
 
 	.line:nth-child(7) {

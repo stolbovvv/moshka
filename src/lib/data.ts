@@ -1,4 +1,4 @@
-import { Faq, Resource, Review } from './definitions';
+import { Author, Faq, Resource, Review } from './definitions';
 
 export async function fetchResources(): Promise<Resource[] | undefined> {
 	try {
@@ -16,6 +16,19 @@ export async function fetchResources(): Promise<Resource[] | undefined> {
 export async function fetchReviews(): Promise<Review[] | undefined> {
 	try {
 		const data = await fetch(`${process.env.API_HOST}/reviews`, {
+			next: { revalidate: 300 },
+		});
+
+		return await data.json();
+	} catch (error) {
+		// console.error(`ERROR: Failed to fetch reviews data. ${error}`);
+		return;
+	}
+}
+
+export async function fetchAuthors(): Promise<Author[] | undefined> {
+	try {
+		const data = await fetch(`${process.env.API_HOST}/authors`, {
 			next: { revalidate: 300 },
 		});
 

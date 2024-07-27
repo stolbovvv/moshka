@@ -22,6 +22,13 @@ export type Resource = {
 	head_description: string;
 };
 
+export type Author = {
+	name: string;
+	photo: string;
+	role: string;
+	text: string;
+};
+
 export type Review = {
 	id: string;
 	name: string;

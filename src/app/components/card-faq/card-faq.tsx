@@ -54,10 +54,8 @@ export function CardFaq({
 			animate={opened ? 'open' : 'hide'}
 			variants={variants.wrapper}
 		>
-			<div className={styles.head}>
-				<h3 className={styles.heading} onClick={() => onOpen()}>
-					{question}
-				</h3>
+			<div className={styles.head} onClick={() => onOpen()}>
+				<h3 className={styles.heading}>{question}</h3>
 				<motion.button
 					className={styles.button}
 					initial={opened ? 'open' : 'hide'}

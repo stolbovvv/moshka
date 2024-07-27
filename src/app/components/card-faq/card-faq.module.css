@@ -1,7 +1,6 @@
 .wrap {
 	display: flex;
 	flex-direction: column;
-	padding: 1.875rem;
 	border: 1px solid var(--clr-neutral-4);
 	border-radius: var(--radius-sm);
 	background-color: var(--clr-neutral-1);
@@ -13,6 +12,8 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 1.25rem;
+	padding: 1.875rem;
+	cursor: pointer;
 }
 
 .heading {
@@ -58,7 +59,7 @@
 }
 
 .content {
-	padding-top: 1.25rem;
+	padding: 0 1.875rem 1.875rem 1.875rem;
 }
 
 .content > *:first-child {
@@ -70,7 +71,7 @@
 }
 
 @media screen and (width < 80em) {
-	.wrap {
+	.head {
 		padding: 1.25rem;
 	}
 
@@ -85,5 +86,9 @@
 
 	.button > span:nth-child(2) {
 		height: 0.125rem;
+	}
+
+	.content {
+		padding: 0 1.25rem 1.25rem 1.25rem;
 	}
 }
