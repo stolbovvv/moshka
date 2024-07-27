@@ -11,7 +11,7 @@ export function SectionPayment() {
 			<div className={styles.head}>
 				<h2 className={styles.heading}>Учись сейчас, а плати потом</h2>
 				<h3 className={styles.subtitle}>
-					с рассрочкой от наших партнеров за <span className="clr-red">741</span> руб./мес
+					с рассрочкой от наших партнеров за <span className="clr-blue">741</span> руб./мес
 				</h3>
 			</div>
 			<div className={styles.cards}>
