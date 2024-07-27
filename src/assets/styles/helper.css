@@ -7,3 +7,15 @@
 .fw-600 {
 	font-weight: 600;
 }
+
+.clr-red {
+	color: var(--clr-red-1);
+}
+
+.clr-blue {
+	color: var(--clr-blue-4);
+}
+
+.clr-yellow {
+	color: var(--clr-yellow-1);
+}
