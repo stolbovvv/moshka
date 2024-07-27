@@ -8,7 +8,7 @@ import '@/assets/styles/helper.css';
 import { sffont, unbounded } from '@/assets/fonts';
 import { Footer } from '@/app/sections/footer/footer';
 import { Header } from '@/app/sections/header/header';
-import { Suspense } from "react";
+import { Suspense } from 'react';
 import { Metrika } from '@/app/components/metrika/metrika';
 
 export const metadata: Metadata = {

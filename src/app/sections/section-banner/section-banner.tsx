@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 import decor from './section-banner-decor.svg';
 import styles from './section-banner.module.css';
+import { AnimMoshka } from './anim-moshka';
 
 const cards = [
 	{
@@ -38,13 +38,7 @@ export function SectionBanner() {
 			<img className={styles.decor} src={decor.src} alt="" />
 			<h2 className={styles.heading}>Добро пожаловать в будущее вместе с нами</h2>
 			<div className={styles.head}>
-				<Image
-					className={styles.image}
-					src="/images/moshka-black.svg"
-					alt="Moshka – международная онлайн школа контента."
-					width={890}
-					height={382}
-				/>
+				<AnimMoshka className={styles.image} />
 			</div>
 			<Marquee className={styles.marquee} autoFill={true}>
 				{tags.map((tag, index) => (

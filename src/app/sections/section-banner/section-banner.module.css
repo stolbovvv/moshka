@@ -59,10 +59,25 @@
 }
 
 .image {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
 	flex: 0 1 auto;
 	width: min(55rem, 100%);
 	height: auto;
 	z-index: 1;
+}
+
+.image > img {
+	flex: 0 0 auto;
+	width: calc(40% - 0.625rem);
+	height: auto;
+}
+
+.image > svg {
+	flex: 0 0 auto;
+	width: calc(60% - 0.625rem);
+	height: auto;
 }
 
 .marquee {
