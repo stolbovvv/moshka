@@ -3,7 +3,7 @@ import { SectionBanner } from '@/app/_sections/section-banner/section-banner';
 import { SectionHistory } from '@/app/_sections/section-history/section-history';
 import { SectionInfo } from '@/app/_sections/section-info/section-info';
 import { SectionPayment } from '@/app/_sections/section-payment/section-payment';
-import { SectionProfit } from '@/app/_sections/section-profit/section-profit';
+import { SectionProfitMonth } from '../_sections/section-profit/section-profit-month';
 import { SectionResources } from '@/app/_sections/section-resources/section-resources';
 import { SectionGallery } from '@/app/_sections/section-gallery/section-gallery';
 import { SectionHero } from '@/app/_sections/section-hero/section-hero';
@@ -28,7 +28,7 @@ export default async function Home() {
 			{resources && <SectionResources resources={resources} />}
 			<SectionExperts />
 			<SectionGallery />
-			<SectionProfit />
+			<SectionProfitMonth />
 			<SectionPayment />
 			{reviews && <SectionReviews reviews={reviews} />}
 			{faqs && <SectionFaq faqs={faqs} />}

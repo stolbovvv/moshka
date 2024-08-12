@@ -6,10 +6,10 @@ import '@/assets/styles/global.css';
 import '@/assets/styles/layout.css';
 import '@/assets/styles/helper.css';
 import { sffont, unbounded } from '@/assets/fonts';
-import { Footer } from '@/app/sections/footer/footer';
-import { Header } from '@/app/sections/header/header';
+import { Footer } from '@/app/_sections/footer/footer';
+import { Header } from '@/app/_sections/header/header';
 import { Suspense } from 'react';
-import { Metrika } from '@/app/components/metrika/metrika';
+import { Metrika } from '@/app/_components/metrika/metrika';
 
 export const metadata: Metadata = {
 	title: 'MOSHKA',

@@ -1,4 +1,4 @@
-import { SectionNotFound } from './sections/section-not-found/section-not-found';
+import { SectionNotFound } from './_sections/section-not-found/section-not-found';
 
 export default function NotFound() {
 	return (
