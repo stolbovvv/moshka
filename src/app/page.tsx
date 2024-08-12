@@ -26,10 +26,10 @@ export default async function Home() {
 			<SectionBanner />
 			<SectionForWhom />
 			{resources && <SectionResources resources={resources} />}
+			<SectionExperts />
 			<SectionGallery />
 			<SectionProfit />
 			<SectionPayment />
-			<SectionExperts />
 			{reviews && <SectionReviews reviews={reviews} />}
 			{faqs && <SectionFaq faqs={faqs} />}
 			<PopupOut />
