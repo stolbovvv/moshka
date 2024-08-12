@@ -120,7 +120,7 @@ export function PopupResource({
 					</div>
 				</div>
 			</motion.div>
-			{isPopupFrameOpen && <div className="popup-frame">{/* Контейнер для iframe */}</div>}
+			{isPopupFrameOpen && <div className="popap-frame">{/* Контейнер для iframe */}</div>}
 		</>
 	);
 }

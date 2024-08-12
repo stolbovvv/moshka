@@ -63,7 +63,7 @@ export function SectionProfitMonth() {
 			</div>
 
 			{isPopupFrameOpen && (
-				<div className="popup-frame" style={{ position: 'absolute' }}>
+				<div className="popap-frame" style={{ position: 'absolute' }}>
 					{/* Контейнер для iframe */}
 				</div>
 			)}
