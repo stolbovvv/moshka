@@ -79,8 +79,19 @@
 }
 
 .price__value_old {
-	text-decoration: line-through;
+	position: relative;
+	align-self: flex-start;
 	font-size: 3rem;
+}
+
+.price__value_old::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0em;
+	right: 0em;
+	height: 3px;
+	background: currentColor;
 }
 
 .price__footnote {

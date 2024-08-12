@@ -55,7 +55,7 @@ export function SectionProfitMonth() {
 					<p className={styles.price__value}>
 						890 ₽ / <span style={{ fontSize: '0.875em' }}>месяц</span>
 					</p>
-					<p className={styles.price__footnote}>Выгода 53%</p>
+					{/* <p className={styles.price__footnote}>Выгода 53%</p> */}
 				</div>
 				<Button className={styles.button} theme="dark" onClick={() => setIsPopupFrameOpen(true)}>
 					Стать участником
