@@ -17,18 +17,19 @@ export function CardResource({
 			<img className={styles.thumb} src={thumb} alt={title} width={427} height={220} />
 			<h3 className={styles.heading}>{title}</h3>
 			<p className={styles.author}>{author?.name || ''}</p>
-			<ul className={styles.props}>
-				<li className={styles.props__item}>
-					<span className={styles.props__label}>Время на освоение</span>
-					<span className={styles.props__value}>{duration}</span>
-				</li>
-				{pathName.match(/\/month$/i) ? null : (
+
+			{pathName.match(/\/month$/i) ? null : (
+				<ul className={styles.props}>
+					<li className={styles.props__item}>
+						<span className={styles.props__label}>Время на освоение</span>
+						<span className={styles.props__value}>{duration}</span>
+					</li>
 					<li className={styles.props__item}>
 						<span className={styles.props__label}>Сложность</span>
 						<span className={styles.props__value}>{complexity}</span>
 					</li>
-				)}
-			</ul>
+				</ul>
+			)}
 			<ul className={styles.tags}>
 				{tags.map((item, index) => (
 					<li key={index} className={styles.tag}>
