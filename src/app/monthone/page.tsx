@@ -2,7 +2,7 @@ import { fetchFaqs, fetchResources, fetchReviews } from '@/lib/data';
 import { SectionBanner } from '@/app/_sections/section-banner/section-banner';
 import { SectionHistory } from '@/app/_sections/section-history/section-history';
 import { SectionInfo } from '@/app/_sections/section-info/section-info';
-import { SectionPayment } from '@/app/_sections/section-payment/section-payment';
+// import { SectionPayment } from '@/app/_sections/section-payment/section-payment';
 import { SectionProfitMonth } from '../_sections/section-profit/section-profit-month';
 import { SectionResources } from '@/app/_sections/section-resources/section-resources';
 import { SectionGallery } from '@/app/_sections/section-gallery/section-gallery';
@@ -29,7 +29,7 @@ export default async function Home() {
 			<SectionExperts />
 			<SectionGallery />
 			<SectionProfitMonth />
-			<SectionPayment />
+			{/* <SectionPayment /> */}
 			{reviews && <SectionReviews reviews={reviews} />}
 			{faqs && <SectionFaq faqs={faqs} />}
 			<PopupOut />
