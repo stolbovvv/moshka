@@ -1,0 +1,84 @@
+.wrap {
+	position: relative;
+	margin-top: 4rem;
+}
+
+.role {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: max-content;
+	max-width: 90%;
+	margin: 0;
+	padding: 1em 1.5em;
+	border-radius: 999rem;
+	background-color: var(--clr-blue-4);
+	transform: translate(-50%, -50%);
+	font-size: 0.875rem;
+	font-family: var(--ff-accent);
+	font-weight: 600;
+	color: var(--clr-neutral-1);
+}
+
+.role[data-rotate="left"] {
+	transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+.role[data-rotate="right"] {
+	transform: translate(-50%, -50%) rotate(5deg);
+}
+
+.head {
+	width: 100%;
+	aspect-ratio: 320/377;
+	overflow: hidden;
+	border-radius: var(--radius-sm);
+	background-color: var(--clr-neutral-1);
+}
+
+.photo {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center bottom;
+}
+
+.name {
+	margin: 1em 0 0;
+	font-size: 1.5rem;
+	font-family: var(--ff-accent);
+	line-height: 1.1;
+	font-weight: 600;
+}
+
+.text {
+	margin: 0.75em 0 0;
+}
+
+@media screen and (width < 64em) {
+	.wrap {
+		margin-top: 3.5rem;
+	}
+
+	.role {
+		font-size: 0.75rem;
+	}
+
+	.name {
+		font-size: 1.25rem;
+	}
+}
+
+@media screen and (width < 48em) {
+	.wrap {
+		margin-top: 3rem;
+	}
+
+	.role {
+		font-size: 0.625rem;
+	}
+
+	.name {
+		font-size: 1rem;
+	}
+}

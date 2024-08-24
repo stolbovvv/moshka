@@ -1,0 +1,66 @@
+@keyframes anim-button-dor-fade {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid currentColor;
+	padding: 1em 2em;
+	border-radius: 999rem;
+	background-color: transparent;
+	text-decoration: none;
+	font-family: var(--ff-accent);
+	font-weight: 700;
+	color: currentColor;
+	cursor: pointer;
+	transition: all var(--transition-sm);
+	text-align: center;
+}
+
+.button:is(:active) {
+	transform: scale(0.9375);
+}
+
+.button--blue {
+	border-color: transparent;
+	background-color: var(--clr-blue-3);
+	color: var(--clr-neutral-1);
+}
+
+.button--blue:is(:focus, :hover) {
+	background-color: var(--clr-blue-4);
+}
+
+.button--dark {
+	border-color: transparent;
+	background-color: var(--clr-dark-2);
+	color: var(--clr-neutral-1);
+}
+
+.button--dark:is(:focus, :hover) {
+	background-color: var(--clr-dark-3);
+}
+
+.button--blue::after,
+.button--dark::after {
+	content: "";
+	flex: 0 0 auto;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 100%;
+	margin-left: 0.5em;
+	background-color: var(--clr-red-1);
+	animation: anim-button-dor-fade infinite alternate 1s;
+}
+
+.button--no-dot::after {
+	display: none;
+}

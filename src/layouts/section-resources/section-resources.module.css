@@ -1,0 +1,153 @@
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 1.875rem;
+	padding: 2.5rem;
+	border-radius: var(--radius-lg);
+	background-color: var(--clr-dark-1);
+	color: var(--clr-neutral-1);
+}
+
+.head {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.heading {
+	margin: 0;
+	font-size: 2.5rem;
+	font-family: var(--ff-accent);
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.tabs {
+	display: flex;
+	align-items: flex-end;
+	gap: 1.25rem;
+}
+
+.tabs__button {
+	display: flex;
+	flex: 0 0 auto;
+	position: relative;
+	border: none;
+	background: none;
+	opacity: 0.5;
+	padding: 0.3em 0;
+	text-align: left;
+	color: inherit;
+	cursor: pointer;
+	transition: var(--transition-sm);
+}
+
+.tabs__button:is(:focus, :hover),
+.tabs__button--current {
+	opacity: 1;
+}
+
+.tabs__button::before {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 0;
+	height: 0.25rem;
+	border-radius: 999rem;
+	background-color: currentColor;
+	opacity: 0;
+	transition: inherit;
+}
+
+.tabs__button--current::before {
+	opacity: 1;
+	width: min(50%, 4.375rem);
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	gap: 1.875rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+	gap: 1.25rem;
+}
+
+.buttons {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1.25rem;
+}
+
+@media screen and (width < 80em) {
+	.wrap {
+		padding: 1.25rem;
+		gap: 1.25rem;
+	}
+
+	.grid {
+		gap: 0.625rem;
+		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	}
+
+	.heading {
+		font-size: 1.875rem;
+	}
+}
+
+@media screen and (width < 64em) {
+	.head {
+		gap: 0.625rem;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.body {
+		gap: 1.25rem;
+	}
+
+	.buttons {
+		gap: 0.625rem;
+	}
+}
+
+@media screen and (width < 48em) {
+	.heading {
+		font-size: 1.375rem;
+	}
+
+	.tabs {
+		width: 100%;
+		overflow-x: auto hidden;
+		padding-bottom: 0.625rem;
+	}
+
+	.grid {
+		grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+	}
+}
+
+@media screen and (width < 36em) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.tabs::-webkit-scrollbar {
+	width: 0.25rem;
+	height: 0.25rem;
+}
+
+.tabs::-webkit-scrollbar-track {
+	border-radius: 999rem;
+	background-color: var(--clr-blue-2);
+}
+
+.tabs::-webkit-scrollbar-thumb {
+	border-radius: 999rem;
+	background-color: var(--clr-blue-4);
+}

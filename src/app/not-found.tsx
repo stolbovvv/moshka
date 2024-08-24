@@ -1,4 +1,4 @@
-import { SectionNotFound } from './_sections/section-not-found/section-not-found';
+import { SectionNotFound } from '@/layouts';
 
 export default function NotFound() {
 	return (

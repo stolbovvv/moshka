@@ -1,20 +1,22 @@
-import { fetchFaqs, fetchResources, fetchReviews } from '@/lib/data';
-import { SectionBanner } from '@/app/_sections/section-banner/section-banner';
-import { SectionHistory } from '@/app/_sections/section-history/section-history';
-import { SectionInfo } from '@/app/_sections/section-info/section-info';
-import { SectionPayment } from '@/app/_sections/section-payment/section-payment';
-import { SectionProfitPodpiska365 } from '../_sections/section-profit/section-profit-podpiska365';
-import { SectionResources } from '@/app/_sections/section-resources/section-resources';
-import { SectionGallery } from '@/app/_sections/section-gallery/section-gallery';
-import { SectionHero } from '@/app/_sections/section-hero/section-hero';
-import { SectionReviews } from '@/app/_sections/section-reviews/section-reviews';
-import { SectionFaq } from '@/app/_sections/section-faq/section-faq';
-import { SectionForWhom } from '@/app/_sections/section-for-whom/section-for-whom';
-import { PopupOut } from '@/app/_components/popup-out/popup-out';
-import { SectionExperts } from '@/app/_sections/section-experts/section-experts';
+import { fetchAuthors, fetchFaqs, fetchResources, fetchReviews } from '@/libs/data';
+import {
+	SectionBanner,
+	SectionExperts,
+	SectionFaq,
+	SectionForWhom,
+	SectionGallery,
+	SectionHero,
+	SectionHistory,
+	SectionInfo,
+	SectionPayment,
+	SectionProfitPodpiska365,
+	SectionResources,
+	SectionReviews,
+} from '@/layouts';
 
-export default async function Home() {
+export default async function Podpiska365() {
 	const resources = await fetchResources();
+	const authors = await fetchAuthors();
 	const reviews = await fetchReviews();
 	const faqs = await fetchFaqs();
 
@@ -26,13 +28,12 @@ export default async function Home() {
 			<SectionBanner />
 			<SectionForWhom />
 			{resources && <SectionResources resources={resources} />}
-			<SectionExperts />
+			{authors && <SectionExperts authors={authors} />}
 			<SectionGallery />
 			<SectionProfitPodpiska365 />
 			<SectionPayment />
 			{reviews && <SectionReviews reviews={reviews} />}
 			{faqs && <SectionFaq faqs={faqs} />}
-			<PopupOut />
 		</main>
 	);
 }

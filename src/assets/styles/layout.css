@@ -1,21 +1,21 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 1.25rem;
+	width: min(100rem, 100%);
 	min-height: 100vh;
 	min-height: 100dvh;
-	width: min(100rem, 100%);
 	margin: 0 auto;
-	padding: 1.25rem 0 0 0;
+	padding: 1.25rem 0 0;
+	gap: 1.25rem;
 }
 
 .wrapper > main {
-	flex: 1 1 auto;
 	display: flex;
+	flex: 1 1 auto;
 	flex-direction: column;
-	gap: 1.25rem;
-	padding: 0 1.25rem;
 	overflow: hidden;
+	padding: 0 1.25rem;
+	gap: 1.25rem;
 }
 
 .wrapper > header {
@@ -30,7 +30,7 @@
 @media screen and (width < 48rem) {
 	.wrapper {
 		gap: 0.625rem;
-		padding: 0.625rem 0 0 0;
+		padding: 0.625rem 0 0;
 	}
 
 	.wrapper > main {

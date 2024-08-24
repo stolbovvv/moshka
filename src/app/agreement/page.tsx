@@ -5,7 +5,7 @@ export const metadata: Metadata = {
 	title: 'Moshka – согласие на обработку персональных данных',
 };
 
-export default function Oferta() {
+export default function Agreement() {
 	return (
 		<main>
 			<article className="article">

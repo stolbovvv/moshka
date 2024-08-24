@@ -1,0 +1,134 @@
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 1.875rem;
+	position: relative;
+	padding: 2.5rem;
+	border-radius: var(--radius-lg);
+	background: linear-gradient(to bottom, var(--clr-blue-1), transparent);
+}
+
+.wrap::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, var(--clr-neutral-1) 5%, transparent 65%);
+	pointer-events: none;
+	z-index: 1;
+}
+
+.head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 1.875rem;
+}
+
+.heading {
+	margin: 0;
+	font-size: 2.5rem;
+	font-family: var(--ff-accent);
+	font-weight: 600;
+	line-height: 1.1;
+}
+
+.body {
+	height: 53.75rem;
+	overflow: hidden;
+	mask: linear-gradient(to top, #000000 99.5%, transparent);
+}
+
+.grid {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+	height: min-content;
+	gap: 1.25rem;
+	margin-bottom: 1.25rem;
+	animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+	to {
+		transform: translateY(calc(-100% - 1.25rem));
+	}
+
+	from {
+		transform: translateY(0%);
+	}
+}
+
+.line {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.line:nth-child(2n + 1) {
+	transform: translateY(-5rem);
+}
+
+.image {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 192 / 270;
+	border-radius: 0.625rem;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media screen and (width < 80em) {
+	.wrap {
+		padding: 1.25rem;
+		gap: 1.25rem;
+	}
+
+	.heading {
+		font-size: 1.875rem;
+	}
+
+	.body {
+		height: min(65vw, 53.75rem);
+	}
+
+	.line:nth-child(7) {
+		display: none;
+	}
+}
+
+@media screen and (width < 64em) {
+	.line:nth-child(6) {
+		display: none;
+	}
+}
+
+@media screen and (width < 48em) {
+	.heading {
+		font-size: 1.375rem;
+	}
+
+	.body {
+		aspect-ratio: 260/360;
+		height: auto;
+	}
+
+	.line:nth-child(5) {
+		display: none;
+	}
+}
+
+@media screen and (width < 36em) {
+	.grid {
+		gap: 0.625rem;
+		margin-bottom: 0.625rem;
+	}
+
+	.line {
+		gap: 0.625rem;
+	}
+
+	.line:nth-child(4) {
+		display: none;
+	}
+}

@@ -1,0 +1,176 @@
+.wrap {
+	display: flex;
+	gap: 0;
+	overflow: hidden;
+	border-radius: var(--radius-lg);
+	background-color: var(--clr-blue-1);
+}
+
+.head {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.875rem;
+	width: 50rem;
+	padding: 2.5rem;
+}
+
+.heading {
+	margin: 0;
+	font-size: 2.875rem;
+	font-family: var(--ff-accent);
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.text {
+	margin: 0;
+}
+
+.note {
+	margin: 0;
+	opacity: 0.5;
+	font-size: 0.875rem;
+}
+
+.body {
+	flex: 1 1 auto;
+	position: relative;
+}
+
+@media screen and (width < 80em) {
+	.wrap {
+		gap: 0;
+	}
+
+	.head {
+		width: 29rem;
+		padding: 2.5rem 1.25rem;
+	}
+
+	.heading {
+		font-size: 2.25rem;
+	}
+}
+
+@media screen and (width < 48em) {
+	.wrap {
+		flex-direction: column-reverse;
+	}
+
+	.head {
+		width: 100%;
+		padding: 1.25rem;
+		gap: 1.25rem;
+	}
+
+	.heading {
+		font-size: 1.725rem;
+	}
+
+	.note {
+		font-size: 0.75rem;
+	}
+
+	.body {
+		width: 100%;
+		height: 15rem;
+		overflow: hidden;
+	}
+
+	.body::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1.5rem;
+		background: linear-gradient(to top, var(--clr-blue-1), transparent);
+	}
+}
+
+.anim {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.anim__gird {
+	display: flex;
+	gap: 0.625rem;
+	margin-bottom: 0.625rem;
+	animation: scroll 20s linear infinite;
+}
+
+.anim__line {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	gap: 0.625rem;
+}
+
+.anim__line:nth-child(2n + 1) {
+	transform: translateY(-5rem);
+}
+
+.anim__img {
+	flex: 0 0 auto;
+	width: 7.75rem;
+	height: 11rem;
+	border-radius: var(--radius-sm);
+}
+
+@media screen and (width < 64em) {
+	.anim__img {
+		width: 6.25rem;
+		height: 8.875rem;
+	}
+}
+
+@media screen and (width < 48em) {
+	.anim {
+		top: 0;
+		width: 100%;
+	}
+
+	.anim__gird {
+		gap: 0.5rem;
+		display: grid;
+		justify-content: center;
+		grid-template-columns: repeat(6, minmax(5rem, 1fr));
+		margin-bottom: 0.5rem;
+	}
+
+	.anim__line {
+		gap: 0.5rem;
+	}
+
+	.anim__img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@keyframes scroll {
+	to {
+		transform: translateY(calc(-100% - 0.625rem));
+	}
+
+	from {
+		transform: translateY(0%);
+	}
+}
+
+@media screen and (width < 48em) {
+	@keyframes scroll {
+		to {
+			transform: translateY(calc(-100% - 0.5rem));
+		}
+
+		from {
+			transform: translateY(0%);
+		}
+	}
+}
