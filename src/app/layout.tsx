@@ -8,6 +8,7 @@ import '@/assets/styles/helper.css';
 import { Calltouch, YandexMetrika } from '@/analytics';
 import { sffont, unbounded } from '@/assets/fonts';
 import { PageFooter, PageHeader, PopupFrame, PopupLeave, PopupResource } from '@/layouts';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
 	title: 'MOSHKA',
@@ -265,6 +266,10 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 
 				<YandexMetrika />
 				<Calltouch />
+
+				<Script id="brand-log">
+					{`console.log('%cGOWEB.PRO\n' + '%cХочешь такой же сайт?' + '%c\n\nПиши в telegram: @goweb_pro\nНаш сайт: https://goweb.pro','font-size: 37px; font-weight: 900; color: rgb(90, 205, 211);','font-size: 14px; background: rgb(90, 205, 211); padding: 5px 10px; color: rgb(255, 255, 255);','line-height: 1.5; background: none;',);`}
+				</Script>
 			</body>
 		</html>
 	);
