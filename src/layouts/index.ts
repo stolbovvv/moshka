@@ -21,3 +21,4 @@ export * from './section-faq/section-faq';
 export * from './section-thanks/section-thanks';
 export * from './section-not-found/section-not-found';
 export * from './section-feedback/section-feedback';
+export * from './section-buttons/section-buttons';

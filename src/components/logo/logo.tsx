@@ -16,7 +16,7 @@ export function Logo({ className, image, width, height, alt }: LogoProps) {
 		<Image
 			className={clsx(className, styles.logo)}
 			src={image ?? logo}
-			alt={alt ?? 'Moska – Международная онлайн школа контента.'}
+			alt={alt ?? 'Moshka – Международная онлайн школа контента.'}
 			width={width ?? 140}
 			height={height ?? 60}
 		/>

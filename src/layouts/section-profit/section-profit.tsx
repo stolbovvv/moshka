@@ -24,7 +24,7 @@ export function SectionProfit() {
 			<div className={styles.body}>
 				<h3 className={styles.subtitle}>Сразу после подписки ты получишь:</h3>
 				<ul className={styles.roll}>
-					<li>44 часов видеоуроков</li>
+					<li>44 часа видеоуроков</li>
 					<li>47 авторских лонгридов и материалов к урокам</li>
 					<li>32 домашних задания для самопроверки</li>
 					<li>10 курсов, мастер-классов и лекций</li>

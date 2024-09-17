@@ -15,9 +15,9 @@ export function PageFooter({ navigation }: FooterProps) {
 				<ul className={styles.menu}>
 					{navigation.map(({ href, text }, index) => (
 						<li key={index} className={styles.menu__item}>
-							<a className={styles.menu__link} href={href}>
+							<Link className={styles.menu__link} href={href}>
 								{text}
-							</a>
+							</Link>
 						</li>
 					))}
 				</ul>

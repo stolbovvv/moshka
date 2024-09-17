@@ -1,5 +1,14 @@
-# www.robotstxt.org/
+User-Agent: *
+Disallow: /index*
+Disallow: /*.swf
+Disallow: *?*
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.doc
+Allow: /*.xls
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.css
+Allow: /*.js
 
-# Allow crawling of all content
-User-agent: *
-Disallow:
+Sitemap: https://moshka.ru/sitemap.xml

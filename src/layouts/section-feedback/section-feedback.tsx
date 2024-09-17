@@ -8,7 +8,7 @@ export function SectionFeedback() {
 				<h2 className={styles.heading}>Остались вопросы?</h2>
 				<p className={styles.descr}>Не стесняйся, напиши нам и мы обязательно с тобой свяжемся!</p>
 			</div>
-			<form className={styles.form} action="#">
+			<form className={styles.form} method="post" action="https://zumcspb.ru/test.php">
 				<label className={styles.label} htmlFor="name">
 					Ваше имя:
 				</label>

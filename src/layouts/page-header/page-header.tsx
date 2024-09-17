@@ -5,6 +5,7 @@ import { Button, Logo } from '@/components';
 import { useEffect, useRef, useState } from 'react';
 import styles from './page-header.module.css';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 interface HeaderProps {
 	navigation: { href: string; text: string }[];
@@ -77,9 +78,9 @@ export function PageHeader({ navigation }: HeaderProps) {
 				<ul className={styles.menu__list}>
 					{navigation.map(({ href, text }, index) => (
 						<li key={index} className={styles.menu__item}>
-							<a className={styles.menu__link} href={href} onClick={() => setMenuIsOpen(false)}>
+							<Link className={styles.menu__link} href={href} onClick={() => setMenuIsOpen(false)}>
 								{text}
-							</a>
+							</Link>
 						</li>
 					))}
 				</ul>

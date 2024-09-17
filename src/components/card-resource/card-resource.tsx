@@ -44,13 +44,14 @@ export function CardResource({ data }: { data: Resource }) {
 					</>
 				) : data.price === '0' ? (
 					<>
-						<span className={styles.price__label}>Доступно только в годовой подписке</span>
+						<span className={styles.price__label}>Входит в подписку</span>
 						<span className={styles.price__value}></span>
 					</>
 				) : (
 					<>
-						<span className={styles.price__label}>Цена без подписки</span>
-						<span className={styles.price__value}>{data.price}</span>
+						<span className={styles.price__label}>Входит в подписку</span>
+						<span className={styles.price__value}></span>
+						{/* <span className={styles.price__value}>{data.price}</span> */}
 					</>
 				)}
 			</div>

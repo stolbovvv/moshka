@@ -76,7 +76,7 @@ export function PopupLeave() {
 						<li>- как вызывать эмоции и создать эпичность кадра</li>
 						<li>- приём монтажа из «Слово пацана» и «Звоните Ди Каприо»</li>
 					</ul>
-					<Button href="https://salebot.site/md/61631aab25a54d8b4966639de060ad41" className={styles.button}>
+					<Button href="https://salebot.site/md/9d4523ffb37e97a695081cb4080f1767" className={styles.button}>
 						Забрать бесплатно
 					</Button>
 				</div>

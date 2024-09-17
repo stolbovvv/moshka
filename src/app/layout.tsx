@@ -5,13 +5,14 @@ import 'swiper/css';
 import '@/assets/styles/global.css';
 import '@/assets/styles/layout.css';
 import '@/assets/styles/helper.css';
-import { Calltouch, YandexMetrika } from '@/analytics';
+import { Calltouch, YandexMetrika, GoogleAnalytics } from '@/analytics';
 import { sffont, unbounded } from '@/assets/fonts';
-import { PageFooter, PageHeader, PopupFrame, PopupLeave, PopupResource } from '@/layouts';
+import { PageFooter, PageHeader, PopupFrame, PopupResource } from '@/layouts';
 
 export const metadata: Metadata = {
-	title: 'MOSHKA',
-	description: 'Международная онлайн школа контента.',
+	title: 'MOSHKA: Международная онлайн школа контента',
+	description:
+		'Курсы по созданию контента ✔️ Онлайн обучение мобильной видеосъемке ✔️ Курсы и мастер-классы от популярных спикеров ✔️ Получи доступ к опыту мастеров кино, сторителлинга, блогинга — MOSHKA',
 	manifest: '/site.webmanifest',
 	icons: [
 		{
@@ -41,7 +42,14 @@ export const metadata: Metadata = {
 		title: 'MOSHKA | Международная онлайн-школа контента',
 		description: `Курсы по созданию и продвижению цифрового контента, работа с нейросетями, сценарное мастерство, режиссура. Учитесь у экспертов и развивайте навыки создания качественного контента в онлайн школе MOSHKA`,
 		type: 'website',
-		images: 'https://static.tildacdn.com/tild3838-3434-4438-a639-336161636437/_3_.svg',
+		images: 'https://moshka.ru/images/og_logo.svg',
+	},
+	alternates: {
+		canonical: 'https://moshka.ru/',
+	},
+	verification: {
+		google: 'PrGKFbfTRRqmlBxSeRZBi4G35nAT3lwPsVQKjCad014',
+		yandex: 'd2f63964be92c5e5',
 	},
 };
 
@@ -50,7 +58,7 @@ const jsonLdOrganization = {
 	'@type': 'Organization',
 	name: 'MOSHKA | Международная онлайн-школа контента',
 	url: 'https://moshka.ru/',
-	logo: 'https://static.tildacdn.com/tild3838-3434-4438-a639-336161636437/_3_.svg',
+	logo: '/',
 	sameAs: ['https://vk.com/moshka_ed', 'https://t.me/+FpT2KAqnp4k2ZDAy', 'https://www.youtube.com/@MOSHKAed'],
 };
 
@@ -243,7 +251,6 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 				</div>
 
 				<PopupFrame />
-				<PopupLeave />
 				<PopupResource />
 
 				<script
@@ -264,6 +271,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 				/>
 
 				<YandexMetrika />
+				<GoogleAnalytics />
 				<Calltouch />
 			</body>
 		</html>
