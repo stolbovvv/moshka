@@ -123,6 +123,13 @@
 			}
 		],
 
+		"alpha-value-notation": [
+			"number",
+			{
+				"message": "Значение альфа канала должно быть числом"
+			}
+		],
+
 		"custom-property-empty-line-before": null,
 
 		"hue-degree-notation": [

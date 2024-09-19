@@ -33,28 +33,28 @@
 	background-color: var(--clr-red-1);
 	border-radius: 50%;
 	box-shadow:
-		0 0 5rem 0 rgba(223, 65, 66, 75%),
-		0 0 5rem 0 rgba(223, 65, 66, 75%);
+		0 0 5rem 0 rgba(223, 65, 66, 0.75),
+		0 0 5rem 0 rgba(223, 65, 66, 0.75);
 	animation: anim-shadow 2s infinite ease-out;
 }
 
 @keyframes anim-shadow {
 	0% {
 		box-shadow:
-			0 0 2rem 0 rgba(223, 65, 66, 15%),
-			0 0 5rem 0 rgba(223, 65, 66, 25%);
+			0 0 2rem 0 rgba(223, 65, 66, 0.15),
+			0 0 5rem 0 rgba(223, 65, 66, 0.25);
 	}
 
 	75% {
 		box-shadow:
-			0 0 2rem 0 rgba(223, 65, 66, 75%),
-			0 0 5rem 0 rgba(223, 65, 66, 87.5%);
+			0 0 2rem 0 rgba(223, 65, 66, 0.75),
+			0 0 5rem 0 rgba(223, 65, 66, 0.875);
 	}
 
 	100% {
 		box-shadow:
-			0 0 2rem 0 rgba(223, 65, 66, 15%),
-			0 0 5rem 0 rgba(223, 65, 66, 25%);
+			0 0 2rem 0 rgba(223, 65, 66, 0.15),
+			0 0 5rem 0 rgba(223, 65, 66, 0.25);
 	}
 }
 

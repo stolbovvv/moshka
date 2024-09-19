@@ -35,7 +35,7 @@ export function SectionProfitMonth() {
 				</ul>
 				<div className={styles.price}>
 					<p className={styles.price__label}>Стоимость подписки</p>
-					<p className={clsx(styles.price__value, styles.price__value_old)}>3900 ₽</p>
+					<p className={clsx(styles.price__value, styles['price__value--old'])}>3900 ₽</p>
 				</div>
 				<div className={styles.price}>
 					<p className={styles.price__label}>Стоимость по АКЦИИ</p>

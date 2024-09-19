@@ -72,7 +72,6 @@
 
 .price__value {
 	margin: 0;
-	font-size: 4.875rem;
 	font-family: var(--ff-accent);
 	font-weight: 700;
 	line-height: 1;
@@ -81,7 +80,6 @@
 .price__value--old {
 	align-self: flex-start;
 	position: relative;
-	font-size: 3rem;
 }
 
 .price__value--old::before {

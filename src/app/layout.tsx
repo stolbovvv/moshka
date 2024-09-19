@@ -5,14 +5,13 @@ import 'swiper/css';
 import '@/assets/styles/global.css';
 import '@/assets/styles/layout.css';
 import '@/assets/styles/helper.css';
-import { Calltouch, YandexMetrika, GoogleAnalytics } from '@/analytics';
 import { sffont, unbounded } from '@/assets/fonts';
+import { Calltouch, YandexMetrika, GoogleAnalytics } from '@/analytics';
 import { PageFooter, PageHeader, PopupFrame, PopupResource } from '@/layouts';
 
 export const metadata: Metadata = {
 	title: 'MOSHKA: Международная онлайн школа контента',
-	description:
-		'Курсы по созданию контента ✔️ Онлайн обучение мобильной видеосъемке ✔️ Курсы и мастер-классы от популярных спикеров ✔️ Получи доступ к опыту мастеров кино, сторителлинга, блогинга — MOSHKA',
+	description: `Курсы по созданию контента ✔️ Онлайн обучение мобильной видеосъемке ✔️ Курсы и мастер-классы от популярных спикеров ✔️ Получи доступ к опыту мастеров кино, сторителлинга, блогинга — MOSHKA`,
 	manifest: '/site.webmanifest',
 	icons: [
 		{

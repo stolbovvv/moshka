@@ -39,7 +39,7 @@ export function SectionProfitPodpiska365() {
 				</ul>
 				<div className={styles.price}>
 					<p className={styles.price__label}>Стоимость подписки</p>
-					<p className={clsx(styles.price__value, styles.price__value_old)}>18 900 ₽</p>
+					<p className={clsx(styles.price__value, styles['price__value--old'])}>18 900 ₽</p>
 				</div>
 				<div className={styles.price}>
 					<p className={styles.price__label}>Стоимость на условиях beta</p>

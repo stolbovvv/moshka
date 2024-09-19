@@ -35,12 +35,14 @@ export function SectionProfit() {
 				</ul>
 				<div className={styles.price}>
 					<p className={styles.price__label}>Стоимость подписки</p>
-					<p className={clsx(styles.price__value, styles.price__value_old)}>18 900 ₽</p>
+					<p className={clsx(styles.price__value, styles['price__value--old'])}>10 000 ₽</p>
 				</div>
 				<div className={styles.price}>
-					<p className={styles.price__label}>Стоимость на условиях beta</p>
-					<p className={styles.price__value}>8900 ₽ / год</p>
-					<p className={styles.price__footnote}>выгода 53% (10 000 Р в год)</p>
+					<p className={styles.price__label}>Специальное предложение</p>
+					<p className={styles.price__value}>
+						5340 ₽ / <span style={{ fontSize: '0.75em' }}>6 месяцев</span>
+					</p>
+					{/* <p className={styles.price__footnote}>выгода 53% (10 000 Р в год)</p> */}
 				</div>
 				<Button className={styles.button} theme="dark" onClick={openPopupFrame}>
 					Стать участником
