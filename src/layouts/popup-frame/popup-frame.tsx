@@ -5,16 +5,18 @@ import { usePageStore } from '@/store/usePageStore';
 import styles from './popup-frame.module.css';
 import clsx from 'clsx';
 
+// <script id="35a3fd584153e09c128c3961eb62f0e15ac224ba" src="https://lk.moshka.ru/pl/lite/widget/script?id=1269513"></script>
+
 export function PopupFrame() {
 	const { popupFrame, closePopupFrame } = usePageStore((state) => state);
 
 	useEffect(() => {
-		if (document.querySelector('#a1abb1e73b7c7212eb5f5f5f94853f73271f97a8')) return;
+		if (document.getElementById('35a3fd584153e09c128c3961eb62f0e15ac224ba')) return;
 
 		const script = document.createElement('script');
 
-		script.id = 'a1abb1e73b7c7212eb5f5f5f94853f73271f97a8';
-		script.src = 'https://lk.moshka.ru/pl/lite/widget/script?id=1223744';
+		script.id = '35a3fd584153e09c128c3961eb62f0e15ac224ba';
+		script.src = 'https://lk.moshka.ru/pl/lite/widget/script?id=1269513';
 		script.async = true;
 
 		document.body.appendChild(script);
@@ -33,7 +35,7 @@ export function PopupFrame() {
 				<iframe
 					className={styles.frame}
 					allowFullScreen
-					src="https://lk.moshka.ru/pl/lite/widget/widget?id=1223744"
+					src="https://lk.moshka.ru/pl/lite/widget/widget?id=1269513"
 				/>
 			</div>
 		</div>
